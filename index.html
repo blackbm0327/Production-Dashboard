@@ -153,9 +153,9 @@
   #panel-th .kpi-card:nth-child(4) .kpi-value { color: #ef5350; }
   #panel-th .kpi-card:nth-child(5) .kpi-value { color: #66bb6a; }
 
-  .chart-card { background: #fff; border-radius: 16px; padding: 24px 22px 18px; box-shadow: 0 3px 16px rgba(90,120,255,0.09); margin-bottom: 20px; }
-  .chart-title { font-size: 14px; font-weight: 700; color: #3949ab; margin-bottom: 6px; padding-left: 12px; border-left: 4px solid #5c6bc0; }
-  .chart-desc { font-size: 11px; color: #aaa; margin-bottom: 12px; padding-left: 12px; }
+  .chart-card { background: #fff; border-radius: 16px; padding: 14px 22px 18px; box-shadow: 0 3px 16px rgba(90,120,255,0.09); margin-bottom: 20px; }
+  .chart-title { font-size: 14px; font-weight: 700; color: #3949ab; margin-bottom: 0; margin-top: 0; padding-left: 12px; border-left: 4px solid #5c6bc0; }
+  .chart-desc { font-size: 11px; color: #aaa; margin-bottom: 0; margin-top: 2px; padding-left: 12px; }
   .legend-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; padding-left: 4px; }
   .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #555; }
 
@@ -234,9 +234,13 @@
 </div>
 
 <div class="chart-card">
-  <div class="chart-title">① 26년 월별 생산량 추이 + 공정 현황 (보조축)</div>
-  <div class="chart-desc">좌측 주축: 생산량(꺾은선) · 목표/24년/25년 평균 기준선 &nbsp;|&nbsp; 우측 보조축: 작지미투입 · 외주선삭 · 소재 미입고 · 열처리 전/후 (누적 막대)</div>
-  <canvas id="ts-chart1" height="260"></canvas>
+  <div style="position:relative;">
+    <canvas id="ts-chart1" height="260"></canvas>
+    <div style="position:absolute;top:8px;left:12px;z-index:10;pointer-events:none;">
+      <div class="chart-title">① 26년 월별 생산량 추이 + 공정 현황 (보조축)</div>
+      <div class="chart-desc">좌측 주축: 생산량(꺾은선) · 목표/24년/25년 평균 기준선 &nbsp;|&nbsp; 우측 보조축: 작지미투입 · 외주선삭 · 소재 미입고 · 열처리 전/후 (누적 막대)</div>
+    </div>
+  </div>
   <div class="legend-row" style="margin-top:14px;margin-bottom:0;">
     <div class="legend-item"><div style="width:18px;height:3px;background:#5c6bc0;border-radius:2px;"></div> 26년 생산량</div>
     <div class="legend-item"><div style="width:18px;height:0;border-top:2px dashed #ffa726;"></div> 목표 수량 (2,000)</div>
@@ -323,9 +327,13 @@
 </div>
 
 <div class="chart-card">
-  <div class="chart-title">① 26년 월별 생산량 추이 + 공정 현황 (보조축)</div>
-  <div class="chart-desc">좌측 주축: 생산량(꺾은선) · 목표/24년/25년 평균 기준선 &nbsp;|&nbsp; 우측 보조축: 소재 미투입 · TIP 전 · 수리 · TIP 후 (누적 막대)</div>
-  <canvas id="th-chart1" height="260"></canvas>
+  <div style="position:relative;">
+    <canvas id="th-chart1" height="260"></canvas>
+    <div style="position:absolute;top:8px;left:12px;z-index:10;pointer-events:none;">
+      <div class="chart-title">① 26년 월별 생산량 추이 + 공정 현황 (보조축)</div>
+      <div class="chart-desc">좌측 주축: 생산량(꺾은선) · 목표/24년/25년 평균 기준선 &nbsp;|&nbsp; 우측 보조축: 소재 미투입 · TIP 전 · 수리 · TIP 후 (누적 막대)</div>
+    </div>
+  </div>
   <div class="legend-row" style="margin-top:14px;margin-bottom:0;">
     <div class="legend-item"><div style="width:18px;height:3px;background:#5c6bc0;border-radius:2px;"></div> 26년 생산량</div>
     <div class="legend-item"><div style="width:18px;height:0;border-top:2px dashed #ffa726;"></div> 목표 수량 (3,200)</div>
