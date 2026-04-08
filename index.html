@@ -236,7 +236,8 @@
 <div class="chart-card">
   <div class="chart-title">① 26년 월별 생산량 추이 + 공정 현황 (보조축)</div>
   <div class="chart-desc">좌측 주축: 생산량(꺾은선) · 목표/24년/25년 평균 기준선 &nbsp;|&nbsp; 우측 보조축: 작지미투입 · 외주선삭 · 소재 미입고 · 열처리 전/후 (누적 막대)</div>
-  <div class="legend-row">
+  <canvas id="ts-chart1" height="260"></canvas>
+  <div class="legend-row" style="margin-top:14px;margin-bottom:0;">
     <div class="legend-item"><div style="width:18px;height:3px;background:#5c6bc0;border-radius:2px;"></div> 26년 생산량</div>
     <div class="legend-item"><div style="width:18px;height:0;border-top:2px dashed #ffa726;"></div> 목표 수량 (2,000)</div>
     <div class="legend-item"><div style="width:18px;height:0;border-top:2px dashed #ab47bc;"></div> 24년 평균 (1,148)</div>
@@ -247,7 +248,6 @@
     <div class="legend-item"><div style="width:12px;height:12px;border-radius:3px;background:rgba(239,83,80,0.85);"></div> 열처리 전</div>
     <div class="legend-item"><div style="width:12px;height:12px;border-radius:3px;background:rgba(102,187,106,0.85);"></div> 열처리 후</div>
   </div>
-  <canvas id="ts-chart1" height="260"></canvas>
 </div>
 
 <div class="chart-card">
@@ -325,7 +325,8 @@
 <div class="chart-card">
   <div class="chart-title">① 26년 월별 생산량 추이 + 공정 현황 (보조축)</div>
   <div class="chart-desc">좌측 주축: 생산량(꺾은선) · 목표/24년/25년 평균 기준선 &nbsp;|&nbsp; 우측 보조축: 소재 미투입 · TIP 전 · 수리 · TIP 후 (누적 막대)</div>
-  <div class="legend-row">
+  <canvas id="th-chart1" height="260"></canvas>
+  <div class="legend-row" style="margin-top:14px;margin-bottom:0;">
     <div class="legend-item"><div style="width:18px;height:3px;background:#5c6bc0;border-radius:2px;"></div> 26년 생산량</div>
     <div class="legend-item"><div style="width:18px;height:0;border-top:2px dashed #ffa726;"></div> 목표 수량 (3,200)</div>
     <div class="legend-item"><div style="width:18px;height:0;border-top:2px dashed #ab47bc;"></div> 24년 평균 (2,708)</div>
@@ -335,7 +336,6 @@
     <div class="legend-item"><div style="width:12px;height:12px;border-radius:3px;background:rgba(239,83,80,0.85);"></div> 수리</div>
     <div class="legend-item"><div style="width:12px;height:12px;border-radius:3px;background:rgba(102,187,106,0.85);"></div> TIP 후</div>
   </div>
-  <canvas id="th-chart1" height="260"></canvas>
 </div>
 
 <div class="chart-card">
@@ -689,7 +689,7 @@ function initCharts() {
     options: {
       responsive: true, interaction: { mode:'index', intersect:false },
       animation: { duration:900, easing:'easeInOutQuart' },
-      layout: { padding: { top: 90, left: 10, right: 20, bottom: 10 } },
+      layout: { padding: { top: 80, left: 10, right: 20, bottom: 10 } },
       barPercentage: 0.85, categoryPercentage: 0.7,
       plugins: { legend:{ display:false }, tooltip:{ backgroundColor:'rgba(26,35,126,0.92)', titleColor:'#c5cae9', bodyColor:'#fff', titleFont:{ family:'Malgun Gothic', size:12, weight:'bold' }, bodyFont:{ family:'Malgun Gothic', size:11 }, padding:12, borderColor:'rgba(92,107,192,0.4)', borderWidth:1, callbacks:{ label: ctx => ctx.parsed.y == null ? null : ` ${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()} 대` } } },
       scales: {
@@ -969,7 +969,7 @@ function initCharts() {
     options: {
       responsive: true, interaction: { mode:'index', intersect:false },
       animation: { duration:900, easing:'easeInOutQuart' },
-      layout: { padding: { top: 90, left: 10, right: 20, bottom: 10 } },
+      layout: { padding: { top: 80, left: 10, right: 20, bottom: 10 } },
       barPercentage: 0.85, categoryPercentage: 0.65,
       plugins: { legend:{ display:false }, tooltip:{ backgroundColor:'rgba(26,35,126,0.92)', titleColor:'#c5cae9', bodyColor:'#fff', titleFont:{ family:'Malgun Gothic', size:12, weight:'bold' }, bodyFont:{ family:'Malgun Gothic', size:11 }, padding:12, borderColor:'rgba(92,107,192,0.4)', borderWidth:1, callbacks:{ label: ctx => ctx.parsed.y == null ? null : ` ${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()} 대` } } },
       scales: {
