@@ -26,60 +26,60 @@ body { font-family:'Malgun Gothic','맑은 고딕',sans-serif; background:linear
 .login-btn:hover { background:linear-gradient(135deg,#1a237e,#3949ab); transform:translateY(-1px); box-shadow:0 6px 20px rgba(92,107,192,0.4); }
 #logout-btn { position:fixed; top:14px; right:18px; z-index:200; background:#fff; border:1.5px solid #9fa8da; color:#3949ab; font-size:12px; font-weight:700; padding:6px 14px; border-radius:20px; cursor:pointer; font-family:'Malgun Gothic',sans-serif; box-shadow:0 2px 8px rgba(90,120,255,0.12); transition:all 0.2s; display:none; }
 #logout-btn:hover { background:#e8eaf6; color:#1a237e; }
-.tab-header { display:flex; justify-content:center; gap:0; padding:20px 28px 0; position:sticky; top:0; z-index:100; background:linear-gradient(135deg,#e8eaf6 0%,#f3f4fb 100%); }
-.tab-btn { padding:13px 48px; font-family:'Malgun Gothic',sans-serif; font-size:15px; font-weight:800; border:none; cursor:pointer; transition:all 0.25s; letter-spacing:1px; }
+.tab-header { display:flex; justify-content:center; gap:0; padding:10px 18px 0; position:sticky; top:0; z-index:100; background:linear-gradient(135deg,#e8eaf6 0%,#f3f4fb 100%); }
+.tab-btn { padding:9px 40px; font-family:'Malgun Gothic',sans-serif; font-size:14px; font-weight:800; border:none; cursor:pointer; transition:all 0.25s; letter-spacing:1px; }
 .tab-btn:first-child { border-radius:12px 0 0 0; }
 .tab-btn:last-child { border-radius:0 12px 0 0; }
 .tab-btn.active { background:#fff; color:#1a237e; box-shadow:0 -3px 0 #5c6bc0 inset,0 3px 12px rgba(90,120,255,0.10); z-index:2; }
 .tab-btn:not(.active) { background:#d8daf0; color:#3949ab; font-weight:700; }
 .tab-btn:not(.active):hover { background:#c5cae9; color:#1a237e; }
-.tab-panel { display:none; padding:18px 28px 28px; }
+.tab-panel { display:none; padding:6px 16px 12px; }
 .tab-panel.active { display:block; }
-h1 { text-align:center; font-size:21px; font-weight:800; color:#1a237e; margin-bottom:3px; letter-spacing:2px; }
-.subtitle { text-align:center; font-size:12px; color:#5c6bc0; font-weight:600; margin-bottom:12px; }
-.top-row { display:flex; gap:10px; margin-bottom:12px; align-items:stretch; flex-wrap:wrap; }
-.sum-card { background:#fff; border-radius:12px; padding:12px 16px; box-shadow:0 2px 10px rgba(90,120,255,0.10); border-top:3px solid; min-width:140px; flex:0 0 auto; }
+h1 { text-align:center; font-size:16px; font-weight:800; color:#1a237e; margin-bottom:1px; letter-spacing:1px; }
+.subtitle { text-align:center; font-size:10px; color:#5c6bc0; font-weight:600; margin-bottom:5px; }
+.top-row { display:flex; gap:6px; margin-bottom:6px; align-items:stretch; flex-wrap:wrap; }
+.sum-card { background:#fff; border-radius:9px; padding:6px 11px; box-shadow:0 2px 8px rgba(90,120,255,0.10); border-top:3px solid; min-width:115px; flex:0 0 auto; }
 .sum-card.prod { border-color:#5c6bc0; }
 .sum-card.avg { border-color:#26c6da; }
 .sum-card.today { border-color:#ffa726; }
 .sum-card.lack { border-color:#ef5350; background:#fff9f9; }
-.sc-label { font-size:11px; color:#3949ab; font-weight:700; margin-bottom:3px; }
-.sc-value { font-size:22px; font-weight:900; line-height:1.15; }
+.sc-label { font-size:10px; color:#3949ab; font-weight:700; margin-bottom:1px; }
+.sc-value { font-size:17px; font-weight:900; line-height:1.1; }
 .sc-value.blue { color:#5c6bc0; }
 .sc-value.cyan { color:#00838f; }
 .sc-value.orange { color:#ff7043; }
 .sc-value.red { color:#ef5350; }
-.sc-sub { font-size:11px; color:#5c6bc0; font-weight:600; margin-top:3px; }
-.sc-badge { display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:20px; margin-top:4px; }
+.sc-sub { font-size:10px; color:#5c6bc0; font-weight:600; margin-top:1px; }
+.sc-badge { display:inline-block; font-size:10px; font-weight:700; padding:1px 6px; border-radius:20px; margin-top:2px; }
 .badge-up { background:#fff0f0; color:#c62828; }
 .badge-down { background:#e3f2fd; color:#1565c0; }
 .badge-zero { background:#f3f4fb; color:#546e7a; }
-.progress-card { background:#fff; border-radius:12px; padding:12px 18px; box-shadow:0 2px 10px rgba(90,120,255,0.10); border-top:3px solid #ffa726; flex:1; min-width:260px; display:flex; flex-direction:column; justify-content:center; gap:7px; }
-.pc-title { font-size:11px; color:#3949ab; font-weight:700; letter-spacing:0.3px; }
+.progress-card { background:#fff; border-radius:9px; padding:6px 12px; box-shadow:0 2px 8px rgba(90,120,255,0.10); border-top:3px solid #ffa726; flex:1; min-width:220px; display:flex; flex-direction:column; justify-content:center; gap:3px; }
+.pc-title { font-size:10px; color:#3949ab; font-weight:700; letter-spacing:0.3px; }
 .pc-pcts { display:flex; align-items:center; gap:0; }
 .pc-pct-item { flex:1; text-align:center; }
-.pc-pct-val { font-size:24px; font-weight:900; line-height:1.1; }
-.pc-pct-lbl { font-size:11px; color:#3949ab; font-weight:700; margin-top:2px; }
-.pc-divider { width:1px; height:36px; background:#c5cae9; flex-shrink:0; }
-.gauge-track { width:100%; height:10px; background:#e8eaf6; border-radius:5px; overflow:hidden; position:relative; }
-.gauge-fill { position:absolute; top:0; left:0; height:100%; border-radius:5px; transition:width 1.2s cubic-bezier(.4,0,.2,1); }
-.gauge-labels { display:flex; justify-content:space-between; font-size:10px; color:#546e7a; font-weight:600; margin-top:2px; }
-.pace-row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
-.pace-chip { font-size:11px; font-weight:700; padding:4px 12px; border-radius:20px; flex:1; text-align:center; white-space:nowrap; }
+.pc-pct-val { font-size:18px; font-weight:900; line-height:1.1; }
+.pc-pct-lbl { font-size:10px; color:#3949ab; font-weight:700; margin-top:1px; }
+.pc-divider { width:1px; height:26px; background:#c5cae9; flex-shrink:0; }
+.gauge-track { width:100%; height:7px; background:#e8eaf6; border-radius:4px; overflow:hidden; position:relative; }
+.gauge-fill { position:absolute; top:0; left:0; height:100%; border-radius:4px; transition:width 1.2s cubic-bezier(.4,0,.2,1); }
+.gauge-labels { display:flex; justify-content:space-between; font-size:9px; color:#546e7a; font-weight:600; margin-top:1px; }
+.pace-row { display:flex; gap:5px; align-items:center; flex-wrap:wrap; }
+.pace-chip { font-size:10px; font-weight:700; padding:2px 8px; border-radius:20px; flex:1; text-align:center; white-space:nowrap; }
 .pace-chip.behind { background:#fff0f0; color:#c62828; border:1px solid #ffcdd2; }
 .pace-chip.ahead { background:#e8f5e9; color:#2e7d32; border:1px solid #c8e6c9; }
-.workday-chip { font-size:10px; color:#3949ab; font-weight:700; white-space:nowrap; }
-.banner { display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; background:#fff; border-radius:12px; padding:10px 18px; margin-bottom:12px; box-shadow:0 2px 10px rgba(90,120,255,0.09); font-size:12px; color:#1a237e; font-weight:700; }
-.banner-title { font-size:13px; font-weight:800; color:#1a237e; }
-.banner-item { display:flex; align-items:center; gap:4px; color:#283593; font-weight:700; }
-.banner-badge { display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:20px; }
-.kpi-row { display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; }
-.kpi-card { background:#fff; border-radius:11px; padding:11px 13px; text-align:center; flex:1; min-width:110px; max-width:160px; box-shadow:0 2px 10px rgba(90,120,255,0.09); border-top:3px solid; }
-.kpi-label { font-size:11px; color:#283593; font-weight:700; margin-bottom:4px; line-height:1.3; }
-.kpi-value { font-size:18px; font-weight:800; }
-.kpi-unit { font-size:10px; color:#546e7a; font-weight:600; margin-top:2px; }
-.kpi-prev { font-size:10px; color:#546e7a; font-weight:600; margin-top:2px; }
-.kpi-badge { display:inline-block; font-size:10px; font-weight:700; padding:1px 7px; border-radius:20px; margin-top:3px; }
+.workday-chip { font-size:9px; color:#3949ab; font-weight:700; white-space:nowrap; }
+.banner { display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; background:#fff; border-radius:9px; padding:4px 12px; margin-bottom:5px; box-shadow:0 2px 8px rgba(90,120,255,0.09); font-size:11px; color:#1a237e; font-weight:700; }
+.banner-title { font-size:11px; font-weight:800; color:#1a237e; }
+.banner-item { display:flex; align-items:center; gap:3px; color:#283593; font-weight:700; }
+.banner-badge { display:inline-block; font-size:10px; font-weight:700; padding:1px 6px; border-radius:20px; }
+.kpi-row { display:flex; gap:5px; margin-bottom:6px; flex-wrap:wrap; }
+.kpi-card { background:#fff; border-radius:9px; padding:5px 9px; text-align:center; flex:1; min-width:90px; max-width:145px; box-shadow:0 2px 8px rgba(90,120,255,0.09); border-top:3px solid; }
+.kpi-label { font-size:10px; color:#283593; font-weight:700; margin-bottom:2px; line-height:1.2; }
+.kpi-value { font-size:14px; font-weight:800; }
+.kpi-unit { font-size:9px; color:#546e7a; font-weight:600; margin-top:1px; }
+.kpi-prev { font-size:9px; color:#546e7a; font-weight:600; margin-top:1px; }
+.kpi-badge { display:inline-block; font-size:9px; font-weight:700; padding:1px 5px; border-radius:20px; margin-top:1px; }
 #panel-ts .kpi-card:nth-child(1){border-color:#5c6bc0;} #panel-ts .kpi-card:nth-child(1) .kpi-value{color:#5c6bc0;}
 #panel-ts .kpi-card:nth-child(2){border-color:#26c6da;} #panel-ts .kpi-card:nth-child(2) .kpi-value{color:#00838f;}
 #panel-ts .kpi-card:nth-child(3){border-color:#ff7043;} #panel-ts .kpi-card:nth-child(3) .kpi-value{color:#d84315;}
@@ -91,16 +91,16 @@ h1 { text-align:center; font-size:21px; font-weight:800; color:#1a237e; margin-b
 #panel-th .kpi-card:nth-child(3){border-color:#5c6bc0;} #panel-th .kpi-card:nth-child(3) .kpi-value{color:#283593;}
 #panel-th .kpi-card:nth-child(4){border-color:#ef5350;} #panel-th .kpi-card:nth-child(4) .kpi-value{color:#c62828;}
 #panel-th .kpi-card:nth-child(5){border-color:#66bb6a;} #panel-th .kpi-card:nth-child(5) .kpi-value{color:#2e7d32;}
-.chart-card { background:#fff; border-radius:14px; padding:18px 18px 14px; box-shadow:0 3px 14px rgba(90,120,255,0.09); margin-bottom:16px; }
-.chart-title { font-size:13px; font-weight:800; color:#1a237e; margin-bottom:5px; padding-left:10px; border-left:4px solid #5c6bc0; }
-.chart-desc { font-size:11px; color:#546e7a; font-weight:600; margin-bottom:10px; padding-left:10px; }
-.legend-row { display:flex; flex-wrap:wrap; gap:9px; margin-bottom:10px; }
-.legend-item { display:flex; align-items:center; gap:4px; font-size:11px; color:#283593; font-weight:700; }
+.chart-card { background:#fff; border-radius:11px; padding:10px 14px 8px; box-shadow:0 3px 12px rgba(90,120,255,0.09); margin-bottom:8px; }
+.chart-title { font-size:12px; font-weight:800; color:#1a237e; margin-bottom:3px; padding-left:8px; border-left:4px solid #5c6bc0; }
+.chart-desc { font-size:10px; color:#546e7a; font-weight:600; margin-bottom:6px; padding-left:8px; }
+.legend-row { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:6px; }
+.legend-item { display:flex; align-items:center; gap:3px; font-size:10px; color:#283593; font-weight:700; }
 .table-wrap { overflow-x:auto; }
-table { width:100%; border-collapse:collapse; font-size:12px; min-width:700px; }
+table { width:100%; border-collapse:collapse; font-size:11px; min-width:680px; }
 thead tr { background:#e8eaf6; }
-th { padding:9px 8px; text-align:center; color:#1a237e; font-weight:800; border-bottom:2px solid #c5cae9; white-space:nowrap; font-size:12px; }
-td { padding:7px 8px; text-align:center; border-bottom:1px solid #e8eaf6; font-size:12px; color:#1a1a2e; font-weight:600; }
+th { padding:6px 6px; text-align:center; color:#1a237e; font-weight:800; border-bottom:2px solid #c5cae9; white-space:nowrap; font-size:11px; }
+td { padding:5px 6px; text-align:center; border-bottom:1px solid #e8eaf6; font-size:11px; color:#1a1a2e; font-weight:600; }
 tbody tr:last-child td { font-weight:800; background:#f0f1fa; color:#1a237e; }
 tbody tr:hover td { background:#eef0fb; }
 .up { color:#c62828; font-weight:800; }
@@ -199,7 +199,7 @@ tbody tr:hover td { background:#eef0fb; }
       <div class="legend-item"><div style="width:10px;height:10px;border-radius:3px;background:rgba(239,83,80,0.85);"></div>열처리 전</div>
       <div class="legend-item"><div style="width:10px;height:10px;border-radius:3px;background:rgba(102,187,106,0.85);"></div>열처리 후</div>
     </div>
-    <canvas id="ts-chart1" height="260"></canvas>
+    <canvas id="ts-chart1" height="190"></canvas>
   </div>
   <div class="chart-card">
     <div class="chart-title">월별 상세 데이터</div>
@@ -293,7 +293,7 @@ tbody tr:hover td { background:#eef0fb; }
       <div class="legend-item"><div style="width:10px;height:10px;border-radius:3px;background:rgba(239,83,80,0.85);"></div>수리</div>
       <div class="legend-item"><div style="width:10px;height:10px;border-radius:3px;background:rgba(102,187,106,0.85);"></div>TIP 후</div>
     </div>
-    <canvas id="th-chart1" height="260"></canvas>
+    <canvas id="th-chart1" height="190"></canvas>
   </div>
   <div class="chart-card">
     <div class="chart-title">월별 상세 데이터</div>
@@ -414,10 +414,10 @@ const tsPaceLine=[null,null,null,tsP.paceTarget,null,null];
    1월 위쪽으로 올려서 기준선과 분리
 ────────────────────────────────────── */
 const tsOffsets=[
-  {dx:0,  dy:-68},  // 1월: 위
-  {dx:72, dy:0},    // 2월: 오른쪽
-  {dx:0,  dy:-68},  // 3월: 위
-  {dx:72, dy:0},    // 4월: 오른쪽
+  {dx:0,  dy:-36},  // 1월: 위
+  {dx:68, dy:0},    // 2월: 오른쪽
+  {dx:0,  dy:-36},  // 3월: 위
+  {dx:68, dy:0},    // 4월: 오른쪽
 ];
 
 const tsPlugin={id:'tsPlugin',afterDatasetsDraw(chart){
@@ -589,13 +589,13 @@ let tsChart=new Chart(tsCtx,{type:'bar',data:{labels:months,datasets:[
   {type:'bar',label:'열처리 후',data:tsHA,backgroundColor:mkG(tsCtx,'rgba(102,187,106,0.88)','rgba(102,187,106,0.50)'),borderColor:'#2e7d32',borderWidth:1.5,borderRadius:{topLeft:5,topRight:5,bottomLeft:0,bottomRight:0},borderSkipped:false,stack:'stackC',yAxisID:'yR',order:10},
   {type:'line',label:'페이스 목표',data:tsPaceLine,borderColor:'#ffa726',backgroundColor:'transparent',borderWidth:2,borderDash:[5,3],pointRadius:6,pointBackgroundColor:'#ffa726',pointBorderColor:'#fff',pointBorderWidth:2,spanGaps:false,yAxisID:'y',order:1.5},
 ]},options:{responsive:true,interaction:{mode:'index',intersect:false},animation:{duration:900,easing:'easeInOutQuart'},
-  layout:{padding:{top:130,right:120,bottom:20,left:10}},
+  layout:{padding:{top:55,right:110,bottom:10,left:10}},
   barPercentage:0.95,categoryPercentage:0.90,
   plugins:{legend:{display:false},tooltip:{backgroundColor:'rgba(26,35,126,0.92)',titleColor:'#c5cae9',bodyColor:'#fff',titleFont:{family:'Malgun Gothic',size:12,weight:'bold'},bodyFont:{family:'Malgun Gothic',size:11},padding:12,borderColor:'rgba(92,107,192,0.4)',borderWidth:1,callbacks:{label:c=>c.parsed.y==null?null:' '+c.dataset.label+': '+c.parsed.y.toLocaleString()+' 대'}}},
   scales:{
-    y:{position:'left',min:0,max:2800,ticks:{callback:v=>v.toLocaleString(),font:{family:'Malgun Gothic',size:11},color:'#3949ab',stepSize:500},grid:{color:'#e8eaf6'},border:{color:'#c5cae9',width:1},title:{display:true,text:'생산량 (대)',font:{family:'Malgun Gothic',size:11,weight:'bold'},color:'#3949ab'}},
-    yR:{position:'right',stacked:true,min:0,max:12000,ticks:{callback:v=>v.toLocaleString(),font:{family:'Malgun Gothic',size:11},color:'#00838f'},grid:{drawOnChartArea:false},border:{color:'#b2dfdb',width:1},title:{display:true,text:'공정 대수 (보조축)',font:{family:'Malgun Gothic',size:11,weight:'bold'},color:'#00838f'}},
-    x:{stacked:true,ticks:{font:{family:'Malgun Gothic',size:11},color:'#1a237e',weight:'bold'},grid:{color:'#f0f0f8'},border:{color:'#c5cae9'}}
+    y:{position:'left',min:0,max:2800,ticks:{callback:v=>v.toLocaleString(),font:{family:'Malgun Gothic',size:10},color:'#3949ab',stepSize:500},grid:{color:'#e8eaf6'},border:{color:'#c5cae9',width:1},title:{display:true,text:'생산량 (대)',font:{family:'Malgun Gothic',size:10,weight:'bold'},color:'#3949ab'}},
+    yR:{position:'right',stacked:true,min:0,max:12000,ticks:{callback:v=>v.toLocaleString(),font:{family:'Malgun Gothic',size:10},color:'#00838f'},grid:{drawOnChartArea:false},border:{color:'#b2dfdb',width:1},title:{display:true,text:'공정 대수 (보조축)',font:{family:'Malgun Gothic',size:10,weight:'bold'},color:'#00838f'}},
+    x:{stacked:true,ticks:{font:{family:'Malgun Gothic',size:10},color:'#1a237e',weight:'bold'},grid:{color:'#f0f0f8'},border:{color:'#c5cae9'}}
   }},plugins:[tsPlugin]});
 
 /* ═══════════════════════════════════════
@@ -617,10 +617,10 @@ const thPrevProd=1415,thPrevMiss=4310,thPrevTipB=3675,thPrevRep=439,thPrevTipA=3
 const thPaceLine=[null,null,null,thP.paceTarget,null,null];
 
 const thOffsets=[
-  {dx:-78,dy:0},    // 1월: 왼쪽
-  {dx:72, dy:0},    // 2월: 오른쪽
-  {dx:0,  dy:-68},  // 3월: 위
-  {dx:0,  dy:-68},  // 4월: 위
+  {dx:-75,dy:0},    // 1월: 왼쪽
+  {dx:68, dy:0},    // 2월: 오른쪽
+  {dx:0,  dy:-36},  // 3월: 위
+  {dx:0,  dy:-36},  // 4월: 위
 ];
 
 const thPlugin={id:'thPlugin',afterDatasetsDraw(chart){
@@ -785,13 +785,13 @@ let thChart=new Chart(thCtx,{type:'bar',data:{labels:months,datasets:[
   {type:'bar',label:'TIP 후',data:thTipA,backgroundColor:mkG(thCtx,'rgba(102,187,106,0.90)','rgba(102,187,106,0.50)'),borderColor:'#2e7d32',borderWidth:1.5,borderRadius:{topLeft:6,topRight:6,bottomLeft:0,bottomRight:0},borderSkipped:false,stack:'stackB',yAxisID:'yR',order:10},
   {type:'line',label:'페이스 목표',data:thPaceLine,borderColor:'#ffa726',backgroundColor:'transparent',borderWidth:2,borderDash:[5,3],pointRadius:6,pointBackgroundColor:'#ffa726',pointBorderColor:'#fff',pointBorderWidth:2,spanGaps:false,yAxisID:'y',order:1.5},
 ]},options:{responsive:true,interaction:{mode:'index',intersect:false},animation:{duration:900,easing:'easeInOutQuart'},
-  layout:{padding:{top:140,right:120,bottom:20,left:10}},
+  layout:{padding:{top:55,right:110,bottom:10,left:10}},
   barPercentage:0.95,categoryPercentage:0.90,
   plugins:{legend:{display:false},tooltip:{backgroundColor:'rgba(26,35,126,0.92)',titleColor:'#c5cae9',bodyColor:'#fff',titleFont:{family:'Malgun Gothic',size:12,weight:'bold'},bodyFont:{family:'Malgun Gothic',size:11},padding:12,borderColor:'rgba(92,107,192,0.4)',borderWidth:1,callbacks:{label:c=>c.parsed.y==null?null:' '+c.dataset.label+': '+c.parsed.y.toLocaleString()+' 대'}}},
   scales:{
-    y:{position:'left',min:0,max:3900,ticks:{callback:v=>v.toLocaleString(),font:{family:'Malgun Gothic',size:11},color:'#3949ab',stepSize:500},grid:{color:'#e8eaf6'},border:{color:'#c5cae9',width:1},title:{display:true,text:'생산량 (대)',font:{family:'Malgun Gothic',size:11,weight:'bold'},color:'#3949ab'}},
-    yR:{position:'right',stacked:true,min:0,max:16000,ticks:{callback:v=>v.toLocaleString(),font:{family:'Malgun Gothic',size:11},color:'#00838f'},grid:{drawOnChartArea:false},border:{color:'#b2dfdb',width:1},title:{display:true,text:'공정 대수 (보조축)',font:{family:'Malgun Gothic',size:11,weight:'bold'},color:'#00838f'}},
-    x:{stacked:true,ticks:{font:{family:'Malgun Gothic',size:11},color:'#1a237e',weight:'bold'},grid:{color:'#f0f0f8'},border:{color:'#c5cae9'}}
+    y:{position:'left',min:0,max:3900,ticks:{callback:v=>v.toLocaleString(),font:{family:'Malgun Gothic',size:10},color:'#3949ab',stepSize:500},grid:{color:'#e8eaf6'},border:{color:'#c5cae9',width:1},title:{display:true,text:'생산량 (대)',font:{family:'Malgun Gothic',size:10,weight:'bold'},color:'#3949ab'}},
+    yR:{position:'right',stacked:true,min:0,max:16000,ticks:{callback:v=>v.toLocaleString(),font:{family:'Malgun Gothic',size:10},color:'#00838f'},grid:{drawOnChartArea:false},border:{color:'#b2dfdb',width:1},title:{display:true,text:'공정 대수 (보조축)',font:{family:'Malgun Gothic',size:10,weight:'bold'},color:'#00838f'}},
+    x:{stacked:true,ticks:{font:{family:'Malgun Gothic',size:10},color:'#1a237e',weight:'bold'},grid:{color:'#f0f0f8'},border:{color:'#c5cae9'}}
   }},plugins:[thPlugin]});
 </script>
 </body>
