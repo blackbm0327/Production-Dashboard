@@ -33,7 +33,7 @@ body { font-family:'Malgun Gothic','맑은 고딕',sans-serif; background:linear
 
 /* ── 탭 ── */
 .tab-header { display:flex; justify-content:center; gap:0; padding:10px 18px 0; position:sticky; top:0; z-index:100; background:linear-gradient(135deg,#e8eaf6 0%,#f3f4fb 100%); }
-.tab-btn { padding:9px 40px; font-family:'Malgun Gothic',sans-serif; font-size:14px; font-weight:800; border:none; cursor:pointer; transition:all 0.25s; letter-spacing:1px; }
+.tab-btn { padding:9px 36px; font-family:'Malgun Gothic',sans-serif; font-size:14px; font-weight:800; border:none; cursor:pointer; transition:all 0.25s; letter-spacing:1px; }
 .tab-btn:first-child { border-radius:12px 0 0 0; }
 .tab-btn:last-child { border-radius:0 12px 0 0; }
 .tab-btn.active { background:#fff; color:#1a237e; box-shadow:0 -3px 0 #5c6bc0 inset,0 3px 12px rgba(90,120,255,0.10); z-index:2; }
@@ -93,8 +93,8 @@ h1 { text-align:center; font-size:16px; font-weight:800; color:#1a237e; margin-b
 .detail-toggle-btn.open .arrow { transform:rotate(180deg); }
 
 /* ── 공정 상세 패널 ── */
-.detail-panel { overflow:hidden; max-height:0; transition:max-height 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s ease; opacity:0; }
-.detail-panel.open { max-height:520px; opacity:1; }
+.detail-panel { overflow:hidden; max-height:0; transition:max-height 0.5s cubic-bezier(.4,0,.2,1), opacity 0.3s ease; opacity:0; }
+.detail-panel.open { max-height:800px; opacity:1; }
 
 /* ── 배너 ── */
 .banner { display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; background:#fff; border-radius:9px; padding:4px 12px; margin-bottom:5px; box-shadow:0 2px 8px rgba(90,120,255,0.09); font-size:11px; color:#1a1a2e; font-weight:700; }
@@ -123,18 +123,12 @@ h1 { text-align:center; font-size:16px; font-weight:800; color:#1a237e; margin-b
 /* ── KPI 카드 행 ── */
 .kpi-row { display:flex; gap:5px; margin-bottom:6px; flex-wrap:wrap; align-items:stretch; }
 .kpi-card { background:#fff; border-radius:9px; padding:5px 9px; text-align:center; flex:1; min-width:90px; max-width:160px; box-shadow:0 2px 8px rgba(90,120,255,0.09); border-top:3px solid; }
-
-/* ── 공정 KPI 행 ── */
 .process-kpi-row { display:flex; gap:5px; margin-bottom:5px; flex-wrap:wrap; align-items:stretch; }
-
-/* TS 공정 KPI 색상 */
 .ts-detail .process-kpi-row .kpi-card:nth-child(1){border-color:#26c6da;} .ts-detail .process-kpi-row .kpi-card:nth-child(1) .kpi-value{color:#00838f;}
 .ts-detail .process-kpi-row .kpi-card:nth-child(2){border-color:#ff7043;} .ts-detail .process-kpi-row .kpi-card:nth-child(2) .kpi-value{color:#d84315;}
 .ts-detail .process-kpi-row .kpi-card:nth-child(3){border-color:#ab47bc;} .ts-detail .process-kpi-row .kpi-card:nth-child(3) .kpi-value{color:#7b1fa2;}
 .ts-detail .process-kpi-row .kpi-card:nth-child(4){border-color:#ef5350;} .ts-detail .process-kpi-row .kpi-card:nth-child(4) .kpi-value{color:#c62828;}
 .ts-detail .process-kpi-row .kpi-card:nth-child(5){border-color:#66bb6a;} .ts-detail .process-kpi-row .kpi-card:nth-child(5) .kpi-value{color:#2e7d32;}
-
-/* TH 공정 KPI 색상 */
 .th-detail .process-kpi-row .kpi-card:nth-child(1){border-color:#26c6da;} .th-detail .process-kpi-row .kpi-card:nth-child(1) .kpi-value{color:#00838f;}
 .th-detail .process-kpi-row .kpi-card:nth-child(2){border-color:#5c6bc0;} .th-detail .process-kpi-row .kpi-card:nth-child(2) .kpi-value{color:#283593;}
 .th-detail .process-kpi-row .kpi-card:nth-child(3){border-color:#ef5350;} .th-detail .process-kpi-row .kpi-card:nth-child(3) .kpi-value{color:#c62828;}
@@ -154,6 +148,7 @@ h1 { text-align:center; font-size:16px; font-weight:800; color:#1a237e; margin-b
 .kpi-card-hero::before { content:''; position:absolute; top:-18px; right:-18px; width:60px; height:60px; background:rgba(255,193,7,0.18); border-radius:50%; }
 .kpi-card-hero .hero-icon { font-size:18px; line-height:1; margin-bottom:2px; }
 .kpi-card-hero .hero-label { font-size:10px; color:#bf6000; font-weight:800; margin-bottom:3px; }
+.kpi-card-hero .hero-label-sub { font-size:9px; color:#8d5000; font-weight:600; margin-bottom:3px; }
 .kpi-card-hero .hero-value { font-size:22px; font-weight:900; color:#e65100; line-height:1.1; }
 .kpi-card-hero .hero-unit { display:inline-block; font-size:10px; font-weight:800; color:#fff; background:linear-gradient(90deg,#ff8f00,#ff6f00); border-radius:20px; padding:2px 8px; margin-top:4px; box-shadow:0 2px 6px rgba(255,111,0,0.30); }
 .kpi-card-hero .hero-prev { font-size:9px; color:#8d5000; font-weight:600; margin-top:3px; }
@@ -167,6 +162,20 @@ h1 { text-align:center; font-size:16px; font-weight:800; color:#1a237e; margin-b
 .kpi-unit  { font-size:9px; color:#546e7a; font-weight:600; margin-top:1px; }
 .kpi-prev  { font-size:9px; color:#546e7a; font-weight:600; margin-top:1px; }
 .kpi-badge { display:inline-block; font-size:9px; font-weight:700; padding:1px 5px; border-radius:20px; margin-top:1px; }
+
+/* ── CBN 전용 ── */
+.cbn-kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:8px; margin-bottom:8px; }
+.cbn-card { background:#fff; border-radius:11px; padding:10px 14px; box-shadow:0 3px 12px rgba(90,120,255,0.09); border-top:3px solid; text-align:center; }
+.cbn-card-label { font-size:10px; font-weight:700; color:#283593; margin-bottom:4px; }
+.cbn-card-val { font-size:16px; font-weight:900; line-height:1; }
+.cbn-card-unit { font-size:9px; color:#546e7a; font-weight:600; }
+.cbn-card-prev { font-size:9px; color:#546e7a; margin-top:3px; }
+.cbn-card-badge { display:inline-block; font-size:9px; font-weight:700; padding:1px 5px; border-radius:20px; margin-top:2px; }
+.cbn-wip-card { background:linear-gradient(135deg,#e8f5e9 0%,#f1f8e9 60%,#dcedc8 100%); border-radius:11px; padding:10px 16px; text-align:center; box-shadow:0 4px 18px rgba(46,125,50,0.18); border:2px solid #66bb6a; }
+.cbn-wip-label { font-size:11px; color:#2e7d32; font-weight:800; margin-bottom:4px; }
+.cbn-wip-value { font-size:24px; font-weight:900; color:#1b5e20; }
+.cbn-wip-prev { font-size:10px; color:#388e3c; margin-top:4px; }
+.cbn-wip-badge { display:inline-block; font-size:10px; font-weight:800; padding:2px 8px; border-radius:20px; margin-top:3px; }
 
 /* ── 차트 카드 ── */
 .chart-card { background:#fff; border-radius:11px; padding:10px 14px 8px; box-shadow:0 3px 12px rgba(90,120,255,0.09); margin-bottom:8px; }
@@ -195,7 +204,7 @@ tbody tr:hover td { background:#eef0fb; }
   <div class="login-box" id="login-box">
     <div class="login-logo">🏭</div>
     <div class="login-title">생산 대기공정 현황</div>
-    <div class="login-sub">TS / TH 생산 모니터링 시스템</div>
+    <div class="login-sub">TS / TH / CBN 생산 모니터링 시스템</div>
     <div class="login-label">비밀번호</div>
     <input class="login-input" type="password" id="pw-input" placeholder="비밀번호 입력" maxlength="20"/>
     <div class="login-error" id="login-error"></div>
@@ -208,6 +217,7 @@ tbody tr:hover td { background:#eef0fb; }
 <div class="tab-header">
   <button class="tab-btn active" onclick="switchTab('ts')">📊 TS 생산</button>
   <button class="tab-btn" onclick="switchTab('th')">📊 TH 생산</button>
+  <button class="tab-btn" onclick="switchTab('cbn')">📊 CBN 생산</button>
 </div>
 
 <!-- ═══════════════════ TS 패널 ═══════════════════ -->
@@ -217,28 +227,27 @@ tbody tr:hover td { background:#eef0fb; }
   </h1>
   <p class="subtitle">2026년 월별 생산량 · 작지미투입 · 외주 선삭 미입고 · 소재 미입고 · 열처리 전/후 현황</p>
 
-  <!-- 상단 요약 카드 -->
   <div class="top-row">
     <div class="sum-card prod">
       <div class="sc-label">26년 누적 생산량</div>
-      <div class="sc-value blue">6,459<span style="font-size:13px;font-weight:700;"> 대</span></div>
-      <div class="sc-sub">4월 당일 1,874대</div>
-      <span class="sc-badge badge-up">▲ 230 전일대비</span>
+      <div class="sc-value blue">6,534<span style="font-size:13px;font-weight:700;"> 대</span></div>
+      <div class="sc-sub">5월 당일 75대</div>
+      <span class="sc-badge badge-up">▲ 75 전일대비</span>
     </div>
     <div class="sum-card avg">
       <div class="sc-label">26년 월 평균 생산량</div>
-      <div class="sc-value cyan">1,615<span style="font-size:13px;font-weight:700;"> 대</span></div>
-      <div class="sc-sub">누적 6,459 ÷ 4개월</div>
-      <span class="sc-badge badge-zero">목표 대비 ▼ 385</span>
+      <div class="sc-value cyan">1,634<span style="font-size:13px;font-weight:700;"> 대</span></div>
+      <div class="sc-sub">누적 6,534 ÷ 4개월</div>
+      <span class="sc-badge badge-zero">목표 대비 ▼ 366</span>
     </div>
     <div class="sum-card lack">
       <div class="sc-label">월 목표(2,000) 대비</div>
-      <div class="sc-value red">▼ 126<span style="font-size:13px;font-weight:700;"> 대</span></div>
-      <div class="sc-sub">목표 달성까지 잔여</div>
+      <div class="sc-value red">▼ 1,925<span style="font-size:13px;font-weight:700;"> 대</span></div>
+      <div class="sc-sub">5월 목표 달성까지 잔여</div>
       <span class="sc-badge badge-down">月 목표 2,000대</span>
     </div>
     <div class="progress-card">
-      <div class="pc-title">📈 4월 목표 달성 진행률 · 유효 근무일 기준 자동 계산</div>
+      <div class="pc-title">📈 5월 목표 달성 진행률 · 유효 근무일 기준 자동 계산</div>
       <div class="pc-pcts">
         <div class="pc-pct-item"><div class="pc-pct-val" id="ts-achv-pct" style="color:#5c6bc0;">—</div><div class="pc-pct-lbl">목표 달성률</div></div>
         <div class="pc-divider"></div>
@@ -264,9 +273,9 @@ tbody tr:hover td { background:#eef0fb; }
     <div class="bn-divider"></div>
     <div class="bn-item">
       <span class="bn-name">🔧 MCT3 (열처리 前 포함)</span>
-      <span class="bn-val">1,167</span>
+      <span class="bn-val">656</span>
       <span class="bn-unit" style="font-size:10px;color:#7f0000;font-weight:700;">대</span>
-      <span class="bn-diff bn-diff-down">▼ 15 전일대비</span>
+      <span class="bn-diff bn-diff-down">▼ 208 전일대비</span>
     </div>
     <div class="bn-urgent">⚡ 긴급 진행 요망</div>
   </div>
@@ -276,24 +285,25 @@ tbody tr:hover td { background:#eef0fb; }
     <div class="kpi-card-hero">
       <div class="hero-icon">🏁</div>
       <div class="hero-label">2주 내 생산입고 예정수량</div>
-      <div class="hero-value">1,287</div>
-      <div><span class="hero-unit">연삭 및 일반조립 공정</span></div>
-      <div class="hero-prev">전일 1,398대</div>
-      <div><span class="hero-badge hero-badge-down">▼ 111 전일대비</span></div>
+      <div class="hero-label-sub">연삭 및 일반조립 공정</div>
+      <div class="hero-value">1,489</div>
+      <div><span class="hero-unit">대</span></div>
+      <div class="hero-prev">전일 1,369대</div>
+      <div><span class="hero-badge hero-badge-up">▲ 120 전일대비</span></div>
     </div>
     <div class="kpi-card" style="border-color:#5c6bc0;">
-      <div class="kpi-label">4월 당일 생산량</div>
-      <div class="kpi-value" style="color:#5c6bc0;">1,874</div>
+      <div class="kpi-label">5월 당일 생산량</div>
+      <div class="kpi-value" style="color:#5c6bc0;">75</div>
       <div class="kpi-unit">대</div>
-      <div class="kpi-prev">전일 1,644대</div>
-      <span class="kpi-badge badge-up">▲ 230</span>
+      <div class="kpi-prev">전일(4월 마지막) 1,874대</div>
+      <span class="kpi-badge badge-down">▼ 1,799 전일대비</span>
     </div>
     <div class="kpi-card-wip">
       <div class="wip-icon">🔄</div>
       <div class="wip-label">총 재공수량</div>
-      <div class="wip-value">10,727</div>
+      <div class="wip-value">10,905</div>
       <div><span class="wip-unit">외주+소재+열처리 합산</span></div>
-      <div class="wip-formula">외주1,960 + 소재540 + 열처前6,325 + 열처後1,902</div>
+      <div class="wip-formula">외주1,960 + 소재755 + 열처前5,830 + 열처後2,360</div>
       <div style="margin-top:4px;font-size:9px;color:#388e3c;font-weight:600;">오늘 공정 합산</div>
     </div>
   </div>
@@ -307,41 +317,22 @@ tbody tr:hover td { background:#eef0fb; }
   <!-- TS 상세 패널 -->
   <div class="detail-panel ts-detail" id="ts-detail-panel">
     <div class="banner">
-      <span class="banner-title">📌 전일/전월 대비 변동 요약 (4월)</span>
-      <div class="banner-item">26년 생산량 <span class="banner-badge badge-up">▲ 230 전일</span></div>
-      <div class="banner-item">작지 미투입 <span class="banner-badge badge-zero">± 0 전일</span> <span class="banner-badge badge-down">▼ 1,948 전월</span></div>
-      <div class="banner-item">외주 선삭 <span class="banner-badge badge-zero">± 0 전일</span> <span class="banner-badge badge-down">▼ 1,360 전월</span></div>
-      <div class="banner-item">소재 미입고 <span class="banner-badge badge-up">▲ 5 전일</span> <span class="banner-badge badge-up">▲ 213 전월</span></div>
-      <div class="banner-item">열처리 전 <span class="banner-badge badge-up">▲ 312 전일</span> <span class="banner-badge badge-up">▲ 2,264 전월</span></div>
-      <div class="banner-item">열처리 후 <span class="banner-badge badge-down">▼ 217 전일</span> <span class="banner-badge badge-down">▼ 70 전월</span></div>
-      <div class="banner-item">2주 내 입고 <span class="banner-badge badge-down">▼ 111 전일</span></div>
+      <span class="banner-title">📌 전일/전월 대비 변동 요약 (5월)</span>
+      <div class="banner-item">26년 생산량 <span class="banner-badge badge-up">▲ 75 전일</span></div>
+      <div class="banner-item">작지 미투입 <span class="banner-badge badge-down">▼ 130 전일</span> <span class="banner-badge badge-down">▼ 130 전월</span></div>
+      <div class="banner-item">외주 선삭 <span class="banner-badge badge-zero">± 0 전일</span> <span class="banner-badge badge-zero">± 0 전월</span></div>
+      <div class="banner-item">소재 미입고 <span class="banner-badge badge-up">▲ 133 전일</span> <span class="banner-badge badge-up">▲ 133 전월</span></div>
+      <div class="banner-item">MCT3 <span class="banner-badge badge-down">▼ 208 전일</span> <span class="banner-badge badge-down">▼ 208 전월</span></div>
+      <div class="banner-item">열처리 전 <span class="banner-badge badge-down">▼ 63 전일</span> <span class="banner-badge badge-down">▼ 63 전월</span></div>
+      <div class="banner-item">열처리 후 <span class="banner-badge badge-up">▲ 123 전일</span> <span class="banner-badge badge-up">▲ 123 전월</span></div>
+      <div class="banner-item">2주 내 입고 <span class="banner-badge badge-up">▲ 120 전일</span> <span class="banner-badge badge-up">▲ 120 전월</span></div>
     </div>
     <div class="process-kpi-row">
-      <div class="kpi-card">
-        <div class="kpi-label">작지 미투입 (4월)</div><div class="kpi-value">2,090</div><div class="kpi-unit">대</div>
-        <div class="kpi-prev">전일 2,090</div><span class="kpi-badge badge-zero">± 0 전일대비</span>
-        <div class="kpi-prev" style="margin-top:3px;">전월(3월) 4,038</div><span class="kpi-badge badge-down">▼ 1,948 전월대비</span>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">외주 선삭 미입고</div><div class="kpi-value">1,960</div><div class="kpi-unit">대</div>
-        <div class="kpi-prev">전일 1,960</div><span class="kpi-badge badge-zero">± 0 전일대비</span>
-        <div class="kpi-prev" style="margin-top:3px;">전월(3월) 3,320</div><span class="kpi-badge badge-down">▼ 1,360 전월대비</span>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">소재 미입고 (4월)</div><div class="kpi-value">540</div><div class="kpi-unit">대</div>
-        <div class="kpi-prev">전일 535</div><span class="kpi-badge badge-up">▲ 5 전일대비</span>
-        <div class="kpi-prev" style="margin-top:3px;">전월(3월) 327</div><span class="kpi-badge badge-up">▲ 213 전월대비</span>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">열처리 전 (4월)</div><div class="kpi-value">6,325</div><div class="kpi-unit">대</div>
-        <div class="kpi-prev">전일 6,013</div><span class="kpi-badge badge-up">▲ 312 전일대비</span>
-        <div class="kpi-prev" style="margin-top:3px;">전월(3월) 4,061</div><span class="kpi-badge badge-up">▲ 2,264 전월대비</span>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">열처리 후 (4월)</div><div class="kpi-value">1,902</div><div class="kpi-unit">대</div>
-        <div class="kpi-prev">전일 2,119</div><span class="kpi-badge badge-down">▼ 217 전일대비</span>
-        <div class="kpi-prev" style="margin-top:3px;">전월(3월) 1,972</div><span class="kpi-badge badge-down">▼ 70 전월대비</span>
-      </div>
+      <div class="kpi-card"><div class="kpi-label">작지 미투입 (5월)</div><div class="kpi-value">1,960</div><div class="kpi-unit">대</div><div class="kpi-prev">전일(4월) 2,090</div><span class="kpi-badge badge-down">▼ 130 전일대비</span><div class="kpi-prev" style="margin-top:3px;">전월(4월) 2,090</div><span class="kpi-badge badge-down">▼ 130 전월대비</span></div>
+      <div class="kpi-card"><div class="kpi-label">외주 선삭 미입고</div><div class="kpi-value">1,960</div><div class="kpi-unit">대</div><div class="kpi-prev">전일(4월) 1,960</div><span class="kpi-badge badge-zero">± 0 전일대비</span><div class="kpi-prev" style="margin-top:3px;">전월(4월) 1,960</div><span class="kpi-badge badge-zero">± 0 전월대비</span></div>
+      <div class="kpi-card"><div class="kpi-label">소재 미입고 (5월)</div><div class="kpi-value">755</div><div class="kpi-unit">대</div><div class="kpi-prev">전일(4월) 622</div><span class="kpi-badge badge-up">▲ 133 전일대비</span><div class="kpi-prev" style="margin-top:3px;">전월(4월) 622</div><span class="kpi-badge badge-up">▲ 133 전월대비</span></div>
+      <div class="kpi-card"><div class="kpi-label">열처리 전 (5월)</div><div class="kpi-value">5,830</div><div class="kpi-unit">대</div><div class="kpi-prev">전일(4월) 5,893</div><span class="kpi-badge badge-down">▼ 63 전일대비</span><div class="kpi-prev" style="margin-top:3px;">전월(4월) 5,893</div><span class="kpi-badge badge-down">▼ 63 전월대비</span></div>
+      <div class="kpi-card"><div class="kpi-label">열처리 후 (5월)</div><div class="kpi-value">2,360</div><div class="kpi-unit">대</div><div class="kpi-prev">전일(4월) 2,237</div><span class="kpi-badge badge-up">▲ 123 전일대비</span><div class="kpi-prev" style="margin-top:3px;">전월(4월) 2,237</div><span class="kpi-badge badge-up">▲ 123 전월대비</span></div>
     </div>
   </div>
 
@@ -360,7 +351,7 @@ tbody tr:hover td { background:#eef0fb; }
       <div class="legend-item"><div style="width:10px;height:10px;border-radius:3px;background:rgba(239,83,80,0.85);"></div>열처리 전</div>
       <div class="legend-item"><div style="width:10px;height:10px;border-radius:3px;background:rgba(102,187,106,0.85);"></div>열처리 후</div>
     </div>
-    <canvas id="ts-chart1" height="200"></canvas>
+    <canvas id="ts-chart1" height="220"></canvas>
   </div>
 
   <div class="chart-card">
@@ -369,7 +360,7 @@ tbody tr:hover td { background:#eef0fb; }
     <div class="table-wrap">
       <table>
         <thead><tr>
-          <th>구분</th><th>26년 생산량</th><th>전일대비<br><small style="font-weight:700;color:#5c6bc0;">(4월)</small></th>
+          <th>구분</th><th>26년 생산량</th><th>전일대비<br><small style="font-weight:700;color:#5c6bc0;">(5월)</small></th>
           <th>작지 미투입</th><th>전일대비</th><th>외주 선삭 미입고</th><th>전일대비</th>
           <th>소재 미입고</th><th>전일대비</th><th>열처리 전</th><th>전일대비</th>
           <th>열처리 후</th><th>전일대비</th><th>2주 내 입고 예정</th><th>전일대비</th>
@@ -379,18 +370,19 @@ tbody tr:hover td { background:#eef0fb; }
           <tr><td>1월</td><td>1,418</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>2,000</td><td>1,148</td><td>1,292</td></tr>
           <tr><td>2월</td><td>1,439</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>2,000</td><td>1,148</td><td>1,292</td></tr>
           <tr><td>3월</td><td>1,728</td><td>-</td><td>4,038</td><td>-</td><td>3,320</td><td>-</td><td>327</td><td>-</td><td>4,061</td><td>-</td><td>1,972</td><td>-</td><td>1,316</td><td>-</td><td>2,000</td><td>1,148</td><td>1,292</td></tr>
+          <tr><td>4월</td><td>1,874</td><td>-</td><td>2,090</td><td>-</td><td>1,960</td><td>-</td><td>622</td><td>-</td><td>6,325</td><td>-</td><td>2,237</td><td>-</td><td>1,369</td><td>-</td><td>2,000</td><td>1,148</td><td>1,292</td></tr>
           <tr>
-            <td>4월</td>
-            <td>1,874</td><td class="up">▲ 230 <small style="color:#888;font-weight:600;">(전일 1,644)</small></td>
-            <td>2,090</td><td class="zero">± 0</td>
+            <td>5월</td>
+            <td>75</td><td>-</td>
+            <td>1,960</td><td class="down">▼ 130</td>
             <td>1,960</td><td class="zero">± 0</td>
-            <td>540</td><td class="up">▲ 5</td>
-            <td>6,325</td><td class="up">▲ 312</td>
-            <td>1,902</td><td class="down">▼ 217</td>
-            <td>1,287</td><td class="down">▼ 111</td>
+            <td>755</td><td class="up">▲ 133</td>
+            <td>5,830</td><td class="down">▼ 63</td>
+            <td>2,360</td><td class="up">▲ 123</td>
+            <td>1,489</td><td class="up">▲ 120</td>
             <td>2,000</td><td>1,148</td><td>1,292</td>
           </tr>
-          <tr><td><strong>합계</strong></td><td><strong>6,459</strong></td><td>-</td><td>2,090</td><td>-</td><td>1,960</td><td>-</td><td>540</td><td>-</td><td>6,325</td><td>-</td><td>1,902</td><td>-</td><td>1,287</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td><strong>합계</strong></td><td><strong>6,534</strong></td><td>-</td><td>1,960</td><td>-</td><td>1,960</td><td>-</td><td>755</td><td>-</td><td>5,830</td><td>-</td><td>2,360</td><td>-</td><td>1,489</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
         </tbody>
       </table>
     </div>
@@ -404,13 +396,12 @@ tbody tr:hover td { background:#eef0fb; }
   </h1>
   <p class="subtitle">2026년 월별 생산량 · 소재 미투입 · 대기공정 TIP 전/후 · 수리 현황</p>
 
-  <!-- 상단 요약 카드 -->
   <div class="top-row">
     <div class="sum-card prod">
       <div class="sc-label">26년 누적 생산량</div>
-      <div class="sc-value blue">11,879<span style="font-size:13px;font-weight:700;"> 대</span></div>
-      <div class="sc-sub">4월 당일 3,441대</div>
-      <span class="sc-badge badge-up">▲ 54 전일대비</span>
+      <div class="sc-value blue">12,077<span style="font-size:13px;font-weight:700;"> 대</span></div>
+      <div class="sc-sub">5월 당일 198대</div>
+      <span class="sc-badge badge-up">▲ 198 전일대비</span>
     </div>
     <div class="sum-card avg">
       <div class="sc-label">26년 월 평균 생산량</div>
@@ -419,13 +410,13 @@ tbody tr:hover td { background:#eef0fb; }
       <span class="sc-badge badge-down">목표 대비 ▼ 230</span>
     </div>
     <div class="sum-card ok">
-      <div class="sc-label">월 목표(3,200) 대비</div>
-      <div class="sc-value green">▲ 241<span style="font-size:13px;font-weight:700;"> 대</span></div>
-      <div class="sc-sub">🎉 당월 목표 초과 달성!</div>
-      <span class="sc-badge badge-ok">月 목표 3,200대</span>
+      <div class="sc-label">5월 목표(3,200) 대비</div>
+      <div class="sc-value green">▼ 3,002<span style="font-size:13px;font-weight:700;"> 대</span></div>
+      <div class="sc-sub">5월 목표 달성까지 잔여</div>
+      <span class="sc-badge badge-down">月 목표 3,200대</span>
     </div>
     <div class="progress-card">
-      <div class="pc-title">📈 4월 목표 달성 진행률 · 유효 근무일 기준 자동 계산</div>
+      <div class="pc-title">📈 5월 목표 달성 진행률 · 유효 근무일 기준 자동 계산</div>
       <div class="pc-pcts">
         <div class="pc-pct-item"><div class="pc-pct-val" id="th-achv-pct" style="color:#5c6bc0;">—</div><div class="pc-pct-lbl">목표 달성률</div></div>
         <div class="pc-divider"></div>
@@ -451,15 +442,15 @@ tbody tr:hover td { background:#eef0fb; }
     <div class="bn-divider"></div>
     <div class="bn-item">
       <span class="bn-name">🔧 플루트 외주 (TIP 前)</span>
-      <span class="bn-val">910</span>
+      <span class="bn-val">900</span>
       <span class="bn-unit" style="font-size:10px;color:#7f0000;font-weight:700;">대</span>
-      <span class="bn-diff bn-diff-zero">± 0 전일대비</span>
+      <span class="bn-diff bn-diff-up">▲ 350 전일대비</span>
     </div>
     <div class="bn-item">
       <span class="bn-name">🔧 모따기 (TIP 後)</span>
-      <span class="bn-val">985</span>
+      <span class="bn-val">905</span>
       <span class="bn-unit" style="font-size:10px;color:#7f0000;font-weight:700;">대</span>
-      <span class="bn-diff bn-diff-down">▼ 100 전일대비</span>
+      <span class="bn-diff bn-diff-down">▼ 90 전일대비</span>
     </div>
     <div class="bn-urgent">⚡ 긴급 진행 요망</div>
   </div>
@@ -469,24 +460,25 @@ tbody tr:hover td { background:#eef0fb; }
     <div class="kpi-card-hero">
       <div class="hero-icon">🏁</div>
       <div class="hero-label">2주 내 생산입고 예정수량</div>
-      <div class="hero-value">2,354</div>
-      <div><span class="hero-unit">연삭 이후 공정</span></div>
-      <div class="hero-prev">전일 2,372대</div>
-      <div><span class="hero-badge hero-badge-down">▼ 18 전일대비</span></div>
+      <div class="hero-label-sub">연삭 이후 공정</div>
+      <div class="hero-value">2,245</div>
+      <div><span class="hero-unit">대</span></div>
+      <div class="hero-prev">전일 2,327대</div>
+      <div><span class="hero-badge hero-badge-down">▼ 82 전일대비</span></div>
     </div>
     <div class="kpi-card" style="border-color:#5c6bc0;">
-      <div class="kpi-label">4월 당일 생산량</div>
-      <div class="kpi-value" style="color:#5c6bc0;">3,441</div>
+      <div class="kpi-label">5월 당일 생산량</div>
+      <div class="kpi-value" style="color:#5c6bc0;">198</div>
       <div class="kpi-unit">대</div>
-      <div class="kpi-prev">전일 3,387대</div>
-      <span class="kpi-badge badge-up">▲ 54 전일대비</span>
+      <div class="kpi-prev">전일(4월 마지막) 3,441대</div>
+      <span class="kpi-badge badge-down">▼ 3,243 전일대비</span>
     </div>
     <div class="kpi-card-wip">
       <div class="wip-icon">🔄</div>
       <div class="wip-label">총 재공수량</div>
-      <div class="wip-value">10,484</div>
+      <div class="wip-value">10,247</div>
       <div><span class="wip-unit">소재+TIP전+수리+TIP후</span></div>
-      <div class="wip-formula">소재2,010 + TIP前3,920 + 수리365 + TIP後4,189</div>
+      <div class="wip-formula">소재1,760 + TIP前3,890 + 수리267 + TIP後4,330</div>
       <div style="margin-top:4px;font-size:9px;color:#388e3c;font-weight:600;">오늘 공정 합산</div>
     </div>
   </div>
@@ -500,37 +492,21 @@ tbody tr:hover td { background:#eef0fb; }
   <!-- TH 상세 패널 -->
   <div class="detail-panel th-detail" id="th-detail-panel">
     <div class="banner">
-      <span class="banner-title">📌 전일/전월 대비 변동 요약 (4월)</span>
-      <div class="banner-item">26년 생산량 <span class="banner-badge badge-up">▲ 54 전일</span></div>
-      <div class="banner-item">소재 미투입 <span class="banner-badge badge-zero">± 0 전일</span> <span class="banner-badge badge-down">▼ 3,390 전월</span></div>
-      <div class="banner-item">플루트 외주 <span class="banner-badge badge-zero">± 0 전일</span></div>
-      <div class="banner-item">TIP 전 <span class="banner-badge badge-down">▼ 40 전일</span> <span class="banner-badge badge-up">▲ 255 전월</span></div>
-      <div class="banner-item">수리 <span class="banner-badge badge-up">▲ 16 전일</span> <span class="banner-badge badge-down">▼ 364 전월</span></div>
-      <div class="banner-item">TIP 후 <span class="banner-badge badge-up">▲ 22 전일</span> <span class="banner-badge badge-up">▲ 337 전월</span></div>
-      <div class="banner-item">모따기 <span class="banner-badge badge-down">▼ 100 전일</span></div>
-      <div class="banner-item">2주 내 입고 <span class="banner-badge badge-down">▼ 18 전일</span></div>
+      <span class="banner-title">📌 전일/전월 대비 변동 요약 (5월)</span>
+      <div class="banner-item">26년 생산량 <span class="banner-badge badge-up">▲ 198 전일</span></div>
+      <div class="banner-item">소재 미투입 <span class="banner-badge badge-down">▼ 250 전일</span> <span class="banner-badge badge-down">▼ 250 전월</span></div>
+      <div class="banner-item">플루트 외주 <span class="banner-badge badge-up">▲ 350 전일</span> <span class="banner-badge badge-up">▲ 350 전월</span></div>
+      <div class="banner-item">TIP 전 <span class="banner-badge badge-up">▲ 230 전일</span> <span class="banner-badge badge-up">▲ 230 전월</span></div>
+      <div class="banner-item">수리 <span class="banner-badge badge-down">▼ 28 전일</span> <span class="banner-badge badge-down">▼ 28 전월</span></div>
+      <div class="banner-item">TIP 후 <span class="banner-badge badge-down">▼ 92 전일</span> <span class="banner-badge badge-down">▼ 92 전월</span></div>
+      <div class="banner-item">모따기 <span class="banner-badge badge-down">▼ 90 전일</span> <span class="banner-badge badge-down">▼ 90 전월</span></div>
+      <div class="banner-item">2주 내 입고 <span class="banner-badge badge-down">▼ 82 전일</span> <span class="banner-badge badge-down">▼ 82 전월</span></div>
     </div>
     <div class="process-kpi-row">
-      <div class="kpi-card">
-        <div class="kpi-label">소재 미투입 (4월)</div><div class="kpi-value">2,010</div><div class="kpi-unit">대</div>
-        <div class="kpi-prev">전일 2,010</div><span class="kpi-badge badge-zero">± 0 전일대비</span>
-        <div class="kpi-prev" style="margin-top:3px;">전월(3월) 5,400</div><span class="kpi-badge badge-down">▼ 3,390 전월대비</span>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">대기공정 TIP 전</div><div class="kpi-value">3,920</div><div class="kpi-unit">대</div>
-        <div class="kpi-prev">전일 3,960</div><span class="kpi-badge badge-down">▼ 40 전일대비</span>
-        <div class="kpi-prev" style="margin-top:3px;">전월(3월) 3,665</div><span class="kpi-badge badge-up">▲ 255 전월대비</span>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">수리 (4월)</div><div class="kpi-value">365</div><div class="kpi-unit">대</div>
-        <div class="kpi-prev">전일 349</div><span class="kpi-badge badge-up">▲ 16 전일대비</span>
-        <div class="kpi-prev" style="margin-top:3px;">전월(3월) 729</div><span class="kpi-badge badge-down">▼ 364 전월대비</span>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">대기공정 TIP 후</div><div class="kpi-value">4,189</div><div class="kpi-unit">대</div>
-        <div class="kpi-prev">전일 4,167</div><span class="kpi-badge badge-up">▲ 22 전일대비</span>
-        <div class="kpi-prev" style="margin-top:3px;">전월(3월) 3,852</div><span class="kpi-badge badge-up">▲ 337 전월대비</span>
-      </div>
+      <div class="kpi-card"><div class="kpi-label">소재 미투입 (5월)</div><div class="kpi-value">1,760</div><div class="kpi-unit">대</div><div class="kpi-prev">전일(4월) 2,010</div><span class="kpi-badge badge-down">▼ 250 전일대비</span><div class="kpi-prev" style="margin-top:3px;">전월(4월) 2,010</div><span class="kpi-badge badge-down">▼ 250 전월대비</span></div>
+      <div class="kpi-card"><div class="kpi-label">대기공정 TIP 전</div><div class="kpi-value">3,890</div><div class="kpi-unit">대</div><div class="kpi-prev">전일(4월) 3,660</div><span class="kpi-badge badge-up">▲ 230 전일대비</span><div class="kpi-prev" style="margin-top:3px;">전월(4월) 3,660</div><span class="kpi-badge badge-up">▲ 230 전월대비</span></div>
+      <div class="kpi-card"><div class="kpi-label">수리 (5월)</div><div class="kpi-value">267</div><div class="kpi-unit">대</div><div class="kpi-prev">전일(4월) 295</div><span class="kpi-badge badge-down">▼ 28 전일대비</span><div class="kpi-prev" style="margin-top:3px;">전월(4월) 295</div><span class="kpi-badge badge-down">▼ 28 전월대비</span></div>
+      <div class="kpi-card"><div class="kpi-label">대기공정 TIP 후</div><div class="kpi-value">4,330</div><div class="kpi-unit">대</div><div class="kpi-prev">전일(4월) 4,422</div><span class="kpi-badge badge-down">▼ 92 전일대비</span><div class="kpi-prev" style="margin-top:3px;">전월(4월) 4,422</div><span class="kpi-badge badge-down">▼ 92 전월대비</span></div>
     </div>
   </div>
 
@@ -548,7 +524,7 @@ tbody tr:hover td { background:#eef0fb; }
       <div class="legend-item"><div style="width:10px;height:10px;border-radius:3px;background:rgba(239,83,80,0.85);"></div>수리</div>
       <div class="legend-item"><div style="width:10px;height:10px;border-radius:3px;background:rgba(102,187,106,0.85);"></div>TIP 후</div>
     </div>
-    <canvas id="th-chart1" height="200"></canvas>
+    <canvas id="th-chart1" height="220"></canvas>
   </div>
 
   <div class="chart-card">
@@ -557,7 +533,7 @@ tbody tr:hover td { background:#eef0fb; }
     <div class="table-wrap">
       <table>
         <thead><tr>
-          <th>구분</th><th>26년 생산량</th><th>전일대비<br><small style="font-weight:700;color:#5c6bc0;">(4월)</small></th>
+          <th>구분</th><th>26년 생산량</th><th>전일대비<br><small style="font-weight:700;color:#5c6bc0;">(5월)</small></th>
           <th>소재 미투입</th><th>전일대비</th><th>플루트 외주</th><th>전일대비</th>
           <th>대기공정 TIP 전</th><th>전일대비</th><th>수리</th><th>전일대비</th>
           <th>대기공정 TIP 후</th><th>전일대비</th><th>모따기</th><th>전일대비</th>
@@ -568,19 +544,215 @@ tbody tr:hover td { background:#eef0fb; }
           <tr><td>1월</td><td>2,827</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>3,200</td><td>2,708</td><td>2,501</td></tr>
           <tr><td>2월</td><td>2,648</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>3,200</td><td>2,708</td><td>2,501</td></tr>
           <tr><td>3월</td><td>2,963</td><td>-</td><td>5,400</td><td>-</td><td>570</td><td>-</td><td>3,665</td><td>-</td><td>729</td><td>-</td><td>3,852</td><td>-</td><td>860</td><td>-</td><td>1,921</td><td>-</td><td>3,200</td><td>2,708</td><td>2,501</td></tr>
+          <tr><td>4월</td><td>3,441</td><td>-</td><td>2,010</td><td>-</td><td>910</td><td>-</td><td>3,660</td><td>-</td><td>295</td><td>-</td><td>4,422</td><td>-</td><td>985</td><td>-</td><td>2,327</td><td>-</td><td>3,200</td><td>2,708</td><td>2,501</td></tr>
           <tr>
-            <td>4월</td>
-            <td>3,441</td><td class="up">▲ 54 <small style="color:#888;font-weight:600;">(전일 3,387)</small></td>
-            <td>2,010</td><td class="zero">± 0</td>
-            <td>910</td><td class="zero">± 0</td>
-            <td>3,920</td><td class="down">▼ 40</td>
-            <td>365</td><td class="up">▲ 16</td>
-            <td>4,189</td><td class="up">▲ 22</td>
-            <td>985</td><td class="down">▼ 100</td>
-            <td>2,354</td><td class="down">▼ 18</td>
+            <td>5월</td>
+            <td>198</td><td>-</td>
+            <td>1,760</td><td class="down">▼ 250</td>
+            <td>900</td><td class="up">▲ 350</td>
+            <td>3,890</td><td class="up">▲ 230</td>
+            <td>267</td><td class="down">▼ 28</td>
+            <td>4,330</td><td class="down">▼ 92</td>
+            <td>905</td><td class="down">▼ 90</td>
+            <td>2,245</td><td class="down">▼ 82</td>
             <td>3,200</td><td>2,708</td><td>2,501</td>
           </tr>
-          <tr><td><strong>합계</strong></td><td><strong>11,879</strong></td><td>-</td><td>2,010</td><td>-</td><td>910</td><td>-</td><td>3,920</td><td>-</td><td>365</td><td>-</td><td>4,189</td><td>-</td><td>985</td><td>-</td><td>2,354</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td><strong>합계</strong></td><td><strong>12,077</strong></td><td>-</td><td>1,760</td><td>-</td><td>900</td><td>-</td><td>3,890</td><td>-</td><td>267</td><td>-</td><td>4,330</td><td>-</td><td>905</td><td>-</td><td>2,245</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ CBN 패널 ═══════════════════ -->
+<div id="panel-cbn" class="tab-panel">
+  <h1>📊 CBN생산 주요 제품군 생산 수량 및 대기공정 현황
+    <span id="cbn-today-date" style="font-size:13px;font-weight:700;color:#5c6bc0;letter-spacing:0;margin-left:8px;"></span>
+  </h1>
+  <p class="subtitle">2026년 월별 생산량(I/S · PC 분리) · 병목공정 · 입고 기준 공정 · 재공수량 현황</p>
+
+  <div class="top-row">
+    <div class="sum-card prod">
+      <div class="sc-label">26년 누적 I/S 생산량</div>
+      <div class="sc-value blue">219,644<span style="font-size:11px;font-weight:700;"> 대</span></div>
+      <div class="sc-sub">5월 당일 6,718대</div>
+      <span class="sc-badge badge-up">▲ 6,718 전일대비</span>
+    </div>
+    <div class="sum-card avg">
+      <div class="sc-label">26년 누적 PC 생산량</div>
+      <div class="sc-value cyan">10,803<span style="font-size:11px;font-weight:700;"> 대</span></div>
+      <div class="sc-sub">5월 당일 249대</div>
+      <span class="sc-badge badge-up">▲ 249 전일대비</span>
+    </div>
+    <div class="sum-card lack">
+      <div class="sc-label">5월 I/S 목표(53,000) 대비</div>
+      <div class="sc-value red">▼ 46,282<span style="font-size:11px;font-weight:700;"> 대</span></div>
+      <div class="sc-sub">5월 목표 달성까지 잔여</div>
+      <span class="sc-badge badge-down">月 I/S 목표 53,000대</span>
+    </div>
+    <div class="progress-card">
+      <div class="pc-title">📈 5월 목표 달성 진행률 · 유효 근무일 기준 자동 계산</div>
+      <div class="pc-pcts">
+        <div class="pc-pct-item"><div class="pc-pct-val" id="cbn-achv-pct" style="color:#5c6bc0;">—</div><div class="pc-pct-lbl">목표 달성률</div></div>
+        <div class="pc-divider"></div>
+        <div class="pc-pct-item"><div class="pc-pct-val" id="cbn-daily-pace" style="color:#2e7d32;">—</div><div class="pc-pct-lbl">일 목표 페이스</div></div>
+      </div>
+      <div>
+        <div class="gauge-track"><div class="gauge-fill" id="cbn-gauge-fill"></div></div>
+        <div class="gauge-labels"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
+      </div>
+      <div class="pace-row">
+        <div class="pace-chip behind" id="cbn-pace-info">계산 중...</div>
+        <div class="workday-chip" id="cbn-workday-info">—</div>
+      </div>
+      <div class="pace-row" style="margin-top:2px;">
+        <div class="deadline-chip" id="cbn-deadline-chip">마감까지 계산 중...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CBN 병목공정 배너 -->
+  <div class="bottleneck-banner">
+    <div class="bn-label"><span class="bn-icon">🚨</span> CBN 병목공정 현황</div>
+    <div class="bn-divider"></div>
+    <div class="bn-item">
+      <span class="bn-name">🔧 병목공정</span>
+      <span class="bn-val">46,399</span>
+      <span class="bn-unit" style="font-size:10px;color:#7f0000;font-weight:700;">대</span>
+      <span class="bn-diff bn-diff-down">▼ 1,020 전일대비</span>
+    </div>
+    <div class="bn-urgent">⚡ 긴급 진행 요망</div>
+  </div>
+
+  <!-- 상단 KPI -->
+  <div class="kpi-row">
+    <div class="kpi-card-hero">
+      <div class="hero-icon">🏁</div>
+      <div class="hero-label">입고 기준 공정</div>
+      <div class="hero-value">37,825</div>
+      <div><span class="hero-unit">입고 기준 공정 대수</span></div>
+      <div class="hero-prev">전일 37,847대</div>
+      <div><span class="hero-badge hero-badge-down">▼ 22 전일대비</span></div>
+    </div>
+    <div class="kpi-card" style="border-color:#5c6bc0;">
+      <div class="kpi-label">5월 당일 생산량 (I/S)</div>
+      <div class="kpi-value" style="color:#5c6bc0;">6,718</div>
+      <div class="kpi-unit">대</div>
+      <div class="kpi-prev">전일(4월) 58,997대</div>
+      <span class="kpi-badge badge-down">▼ 52,279 전일대비</span>
+    </div>
+    <div class="kpi-card" style="border-color:#ff7043;">
+      <div class="kpi-label">5월 당일 생산량 (PC)</div>
+      <div class="kpi-value" style="color:#ff7043;">249</div>
+      <div class="kpi-unit">대</div>
+      <div class="kpi-prev">전일(4월) 3,116대</div>
+      <span class="kpi-badge badge-down">▼ 2,867 전일대비</span>
+    </div>
+    <div class="kpi-card-wip">
+      <div class="wip-icon">🔄</div>
+      <div class="wip-label">총 재공수량</div>
+      <div class="wip-value">110,577</div>
+      <div><span class="wip-unit">오늘 기준</span></div>
+      <div class="wip-formula">전일 111,196대</div>
+      <div style="margin-top:4px;"><span style="display:inline-block;font-size:9px;font-weight:800;padding:2px 6px;border-radius:20px;background:#e3f2fd;color:#1565c0;border:1px solid #bbdefb;">▼ 619 전일대비</span></div>
+    </div>
+  </div>
+
+  <!-- CBN 공정 상세보기 토글 -->
+  <button class="detail-toggle-btn" id="cbn-detail-btn" onclick="toggleDetail('cbn')">
+    <span>🔍 공정 상세보기 (전일대비 변동 · 공정별 KPI)</span>
+    <span class="arrow">▼</span>
+  </button>
+
+  <!-- CBN 상세 패널 -->
+  <div class="detail-panel cbn-detail" id="cbn-detail-panel">
+    <div class="banner">
+      <span class="banner-title">📌 전일/전월 대비 변동 요약 (5월)</span>
+      <div class="banner-item">I/S 생산량 <span class="banner-badge badge-down">▼ 52,279 전일</span></div>
+      <div class="banner-item">PC 생산량 <span class="banner-badge badge-down">▼ 2,867 전일</span></div>
+      <div class="banner-item">병목공정 <span class="banner-badge badge-down">▼ 1,020 전일</span> <span class="banner-badge badge-down">▼ 1,020 전월</span></div>
+      <div class="banner-item">입고 기준 <span class="banner-badge badge-down">▼ 22 전일</span> <span class="banner-badge badge-down">▼ 22 전월</span></div>
+      <div class="banner-item">재공수량 <span class="banner-badge badge-down">▼ 619 전일</span> <span class="banner-badge badge-down">▼ 619 전월</span></div>
+    </div>
+    <div class="process-kpi-row">
+      <div class="kpi-card" style="border-color:#ef5350;"><div class="kpi-label">병목공정 (5월)</div><div class="kpi-value" style="color:#c62828;">46,399</div><div class="kpi-unit">대</div><div class="kpi-prev">전일(4월) 47,419</div><span class="kpi-badge badge-down">▼ 1,020 전일대비</span><div class="kpi-prev" style="margin-top:3px;">전월(4월) 47,419</div><span class="kpi-badge badge-down">▼ 1,020 전월대비</span></div>
+      <div class="kpi-card" style="border-color:#ffa726;"><div class="kpi-label">입고 기준 공정 (5월)</div><div class="kpi-value" style="color:#e65100;">37,825</div><div class="kpi-unit">대</div><div class="kpi-prev">전일(4월) 37,847</div><span class="kpi-badge badge-down">▼ 22 전일대비</span><div class="kpi-prev" style="margin-top:3px;">전월(4월) 37,847</div><span class="kpi-badge badge-down">▼ 22 전월대비</span></div>
+      <div class="kpi-card" style="border-color:#66bb6a;"><div class="kpi-label">총 재공수량 (5월)</div><div class="kpi-value" style="color:#2e7d32;">110,577</div><div class="kpi-unit">대</div><div class="kpi-prev">전일(4월) 111,196</div><span class="kpi-badge badge-down">▼ 619 전일대비</span><div class="kpi-prev" style="margin-top:3px;">전월(4월) 111,196</div><span class="kpi-badge badge-down">▼ 619 전월대비</span></div>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-title">① 26년 월별 생산량 추이 (I/S · PC) + 공정 현황 (보조축)</div>
+    <div class="chart-desc">좌측 주축: I/S 생산량(꺾은선) · 목표/24년/25년 기준선 | 우측 보조축: PC 생산량(꺾은선) · 병목·입고기준 막대(5월)</div>
+    <div class="legend-row">
+      <div class="legend-item"><div style="width:15px;height:3px;background:#5c6bc0;border-radius:2px;"></div>I/S 생산량 (좌축)</div>
+      <div class="legend-item"><div style="width:15px;height:3px;background:#ff7043;border-radius:2px;"></div>PC 생산량 (우축)</div>
+      <div class="legend-item"><div style="width:15px;height:0;border-top:2px dashed #ffa726;"></div>I/S 목표(53,000)</div>
+      <div class="legend-item"><div style="width:15px;height:0;border-top:2px dotted #ffa726;"></div>페이스 목표</div>
+      <div class="legend-item"><div style="width:15px;height:0;border-top:2.5px dashed #ab47bc;"></div>24년 I/S(48,821)</div>
+      <div class="legend-item"><div style="width:15px;height:0;border-top:1.5px dotted #ec407a;"></div>25년 I/S(49,234)</div>
+      <div class="legend-item"><div style="width:10px;height:10px;border-radius:3px;background:rgba(239,83,80,0.85);"></div>병목공정 (5월)</div>
+      <div class="legend-item"><div style="width:10px;height:10px;border-radius:3px;background:rgba(38,198,218,0.85);"></div>입고기준공정 (5월)</div>
+    </div>
+    <canvas id="cbn-chart1" height="220"></canvas>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-title">월별 상세 데이터</div>
+    <div class="chart-desc">I/S · PC 분리 표시 · 전월(4월) 값 별도 강조</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">구분</th>
+            <th colspan="2">생산량</th>
+            <th colspan="2">목표</th>
+            <th colspan="2">목표대비</th>
+            <th rowspan="2">병목공정</th><th rowspan="2">전일대비</th>
+            <th rowspan="2">입고 기준 공정</th><th rowspan="2">전일대비</th>
+            <th rowspan="2">재공수량</th><th rowspan="2">전일대비</th>
+            <th rowspan="2">24년평균<br>(I/S)</th><th rowspan="2">25년평균<br>(I/S)</th>
+          </tr>
+          <tr>
+            <th>I/S</th><th>PC</th>
+            <th>I/S</th><th>PC</th>
+            <th>I/S</th><th>PC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1월</td><td>50,636</td><td>2,465</td><td>53,000</td><td>3,000</td><td class="down">▼ 2,364</td><td class="down">▼ 535</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>48,821</td><td>49,234</td></tr>
+          <tr><td>2월</td><td>45,868</td><td>2,201</td><td>53,000</td><td>3,000</td><td class="down">▼ 7,132</td><td class="down">▼ 799</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>48,821</td><td>49,234</td></tr>
+          <tr><td>3월</td><td>57,425</td><td>2,772</td><td>53,000</td><td>3,000</td><td class="up">▲ 4,425</td><td class="down">▼ 228</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>48,821</td><td>49,234</td></tr>
+          <tr style="background:#fff8e1;">
+            <td><strong>4월(전월)</strong></td>
+            <td><strong>58,997</strong></td><td><strong>3,116</strong></td>
+            <td>53,000</td><td>3,000</td>
+            <td class="up">▲ 5,997</td><td class="up">▲ 116</td>
+            <td><strong>47,419</strong></td><td>-</td>
+            <td><strong>37,847</strong></td><td>-</td>
+            <td><strong>111,196</strong></td><td>-</td>
+            <td>48,821</td><td>49,234</td>
+          </tr>
+          <tr>
+            <td>5월</td>
+            <td>6,718</td>
+            <td>249</td>
+            <td>53,000</td><td>3,000</td>
+            <td class="down">▼ 46,282</td><td class="down">▼ 2,751</td>
+            <td>46,399</td><td class="down">▼ 1,020</td>
+            <td>37,825</td><td class="down">▼ 22</td>
+            <td>110,577</td><td class="down">▼ 619</td>
+            <td>48,821</td><td>49,234</td>
+          </tr>
+          <tr>
+            <td><strong>합계</strong></td>
+            <td><strong>219,644</strong></td><td><strong>10,803</strong></td>
+            <td>-</td><td>-</td><td>-</td><td>-</td>
+            <td>46,399</td><td>-</td>
+            <td>37,825</td><td>-</td>
+            <td>110,577</td><td>-</td>
+            <td>-</td><td>-</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -623,12 +795,14 @@ if(sessionStorage.getItem('auth')==='1'){
 /* ══════ 탭 전환 ══════ */
 function switchTab(tab){
   document.querySelectorAll('.tab-btn').forEach((b,i)=>{
-    b.classList.toggle('active',(tab==='ts'&&i===0)||(tab==='th'&&i===1));
+    b.classList.toggle('active',(tab==='ts'&&i===0)||(tab==='th'&&i===1)||(tab==='cbn'&&i===2));
   });
-  document.getElementById('panel-ts').classList.toggle('active',tab==='ts');
-  document.getElementById('panel-th').classList.toggle('active',tab==='th');
+  ['ts','th','cbn'].forEach(p=>{
+    document.getElementById('panel-'+p).classList.toggle('active',tab===p);
+  });
   if(tab==='ts'&&tsChart) tsChart.resize();
   if(tab==='th'&&thChart) thChart.resize();
+  if(tab==='cbn'&&cbnChart) cbnChart.resize();
 }
 
 /* ══════ 공정 상세보기 토글 ══════ */
@@ -646,68 +820,53 @@ function toggleDetail(pid){
 /* ══════ 날짜 표시 ══════ */
 const now=new Date();
 const dateStr=`${now.getFullYear()}년 ${now.getMonth()+1}월 ${now.getDate()}일`;
-document.getElementById('ts-today-date').textContent=`(${dateStr} 기준)`;
-document.getElementById('th-today-date').textContent=`(${dateStr} 기준)`;
+['ts','th','cbn'].forEach(id=>{
+  document.getElementById(id+'-today-date').textContent=`(${dateStr} 기준)`;
+});
 
-/* ══════ 진행률 계산 ══════ */
-function calcProgress(year,month,todayDate,target,prod){
-  const wds=[];
-  const d=new Date(year,month-1,1);
-  while(d.getMonth()===month-1){ if(d.getDay()!==0&&d.getDay()!==6) wds.push(new Date(d)); d.setDate(d.getDate()+1); }
-  const eff=wds.length-1;
-  const elapsedRaw=wds.filter(w=>w<=todayDate).length;
-  const elapsed=Math.max(elapsedRaw,0);
-  const remainingWd=wds.filter(w=>w>todayDate).length;
+/* ══════ 진행률 계산 (5월 유효근무일 17일, 오늘 1일차, 잔여 16일) ══════ */
+function applyProgress(pid, prod, target){
+  const eff=17, elapsed=1, remainWd=16;
+  const achvPct=(prod/target*100).toFixed(1);
+  const dailyPace=(target/eff).toFixed(1);
+  const paceTarget=Math.round(target/eff*elapsed);
+  const paceDiff=prod-paceTarget;
   const remain=Math.max(target-prod,0);
-  const needPerDay=remainingWd>0?Math.ceil(remain/remainingWd):null;
-  return{
-    eff,elapsed,remainingWd,
-    achvPct:(prod/target*100).toFixed(1),
-    paceTarget:Math.round(target/eff*elapsed),
-    paceDiff:prod-Math.round(target/eff*elapsed),
-    dailyPace:(target/eff).toFixed(1),
-    remain,needPerDay
-  };
-}
-const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
-const cm=now.getMonth()+1;
+  const needPerDay=remainWd>0?Math.ceil(remain/remainWd):null;
 
-function applyProgress(pid,prod,target){
-  const p=calcProgress(now.getFullYear(),cm,today,target,prod);
-  document.getElementById(pid+'-achv-pct').textContent=p.achvPct+'%';
-  document.getElementById(pid+'-daily-pace').textContent=p.dailyPace+'대';
-  document.getElementById(pid+'-workday-info').textContent=`유효 근무일 ${p.eff}일 | 경과 ${p.elapsed}일차`;
+  document.getElementById(pid+'-achv-pct').textContent=achvPct+'%';
+  document.getElementById(pid+'-daily-pace').textContent=Number(dailyPace).toLocaleString()+'대';
+  document.getElementById(pid+'-workday-info').textContent=`유효 근무일 ${eff}일 | 경과 ${elapsed}일차`;
+
   const el=document.getElementById(pid+'-pace-info');
-  if(p.paceDiff>=0){
+  if(paceDiff>=0){
     el.className='pace-chip ahead';
-    el.textContent=`▲ 페이스 +${p.paceDiff.toLocaleString()}대 앞서 있음 (목표 ${p.paceTarget.toLocaleString()}대)`;
+    el.textContent=`▲ 페이스 +${paceDiff.toLocaleString()}대 앞서 있음 (목표 ${paceTarget.toLocaleString()}대)`;
   } else {
     el.className='pace-chip behind';
-    el.textContent=`▼ 페이스 ${Math.abs(p.paceDiff).toLocaleString()}대 뒤처짐 (목표 ${p.paceTarget.toLocaleString()}대)`;
+    el.textContent=`▼ 페이스 ${Math.abs(paceDiff).toLocaleString()}대 뒤처짐 (목표 ${paceTarget.toLocaleString()}대)`;
   }
+
   const dc=document.getElementById(pid+'-deadline-chip');
-  if(dc){
-    if(p.remain<=0){
-      dc.textContent='🎉 목표 달성 완료!';
-      dc.style.background='linear-gradient(90deg,#e8f5e9,#f1f8e9)';
-      dc.style.color='#2e7d32'; dc.style.borderColor='#66bb6a';
-    } else if(p.needPerDay!==null){
-      dc.textContent=`🏁 마감까지 잔여 ${p.remainingWd}일 · 목표 달성 위해 일 ${p.needPerDay.toLocaleString()}대 필요 (잔여 ${p.remain.toLocaleString()}대)`;
-    } else {
-      dc.textContent=`⚠️ 잔여 근무일 없음 · 미달성 ${p.remain.toLocaleString()}대`;
-      dc.style.background='#fff0f0'; dc.style.color='#c62828'; dc.style.borderColor='#ef9a9a';
-    }
+  if(remain<=0){
+    dc.textContent='🎉 목표 달성 완료!';
+  } else if(needPerDay!==null){
+    dc.textContent=`🏁 마감까지 잔여 ${remainWd}일 · 목표 달성 위해 일 ${needPerDay.toLocaleString()}대 필요 (잔여 ${remain.toLocaleString()}대)`;
   }
+
   setTimeout(()=>{
-    const aw=Math.min(parseFloat(p.achvPct),100);
-    document.getElementById(pid+'-gauge-fill').style.width=aw+'%';
-    const col=aw<20?'linear-gradient(90deg,#ef5350,#e57373)':aw<50?'linear-gradient(90deg,#ffa726,#ffcc02)':'linear-gradient(90deg,#5c6bc0,#7986cb)';
-    document.getElementById(pid+'-gauge-fill').style.background=col;
+    const aw=Math.min(parseFloat(achvPct),100);
+    const gf=document.getElementById(pid+'-gauge-fill');
+    gf.style.width=aw+'%';
+    gf.style.background=aw<20?'linear-gradient(90deg,#ef5350,#e57373)':aw<50?'linear-gradient(90deg,#ffa726,#ffcc02)':'linear-gradient(90deg,#5c6bc0,#7986cb)';
   },400);
-  return p;
+
+  return {paceTarget, paceDiff, remain, needPerDay, remainWd};
 }
-const tsP=applyProgress('ts',1874,2000);
-const thP=applyProgress('th',3441,3200);
+
+const tsP=applyProgress('ts',75,2000);
+const thP=applyProgress('th',198,3200);
+const cbnP=applyProgress('cbn',6718,53000); // I/S 기준
 
 /* ══════ 공통 유틸 ══════ */
 const months=['1월','2월','3월','4월','5월','6월'];
@@ -724,7 +883,7 @@ function rrect(ctx,x,y,w,h,r){
   }
 }
 
-/* ══════ 막대 레이블 ══════ */
+/* ══════ 막대 레이블 (내부/외부 자동) ══════ */
 function drawBarLabel(ctx,bar,value,textColor,diff,forceRight,forceLeft){
   const barH=Math.abs(bar.base-bar.y);
   if(barH<1) return;
@@ -804,80 +963,99 @@ function drawBarLabel(ctx,bar,value,textColor,diff,forceRight,forceLeft){
   ctx.restore();
 }
 
-/* ══════ 꺾은선 레이블 ══════ */
-function drawLineLabel(c,pt,val,offX,offY,prevVal,target,isCurrentMonth,placeBadgesBelow){
+/* ══════ 꺾은선 레이블 — 5월 값은 완전 오른쪽 끝에 가이드선으로 배치 ══════ */
+function drawLineLabel(c,pt,val,offX,offY,prevVal,target,isCurrentMonth,placeBadgesBelow,forceRightEdge,chartArea){
+  // 5월(현재월): 오른쪽 끝 + 수직 가이드선
+  if(forceRightEdge && chartArea){
+    const rightX = chartArea.right - 10;
+    const labelY  = pt.y;
+
+    // 수평 가이드 점선 (포인트 → 오른쪽 끝)
+    c.save();
+    c.beginPath(); c.setLineDash([4,3]);
+    c.strokeStyle='rgba(92,107,192,0.5)'; c.lineWidth=1.4;
+    c.moveTo(pt.x, pt.y); c.lineTo(rightX - 70, pt.y);
+    c.stroke(); c.setLineDash([]);
+
+    // 포인트 강조
+    c.beginPath(); c.arc(pt.x,pt.y,4,0,Math.PI*2);
+    c.fillStyle='#5c6bc0'; c.fill();
+    c.beginPath(); c.arc(pt.x,pt.y,4,0,Math.PI*2);
+    c.strokeStyle='#fff'; c.lineWidth=2; c.stroke();
+
+    // 값 박스
+    c.font='bold 12px Malgun Gothic';
+    const tw=c.measureText(val.toLocaleString()).width;
+    const bw=tw+18, bh=24;
+    const bx=rightX-bw, by=labelY-bh/2;
+    rrect(c,bx,by,bw,bh,7);
+    c.fillStyle='#fff'; c.fill();
+    c.strokeStyle='#5c6bc0'; c.lineWidth=2; c.stroke();
+    c.fillStyle='#1a237e'; c.textAlign='center'; c.textBaseline='middle';
+    c.fillText(val.toLocaleString(), bx+bw/2, labelY);
+
+    // 목표대비 뱃지
+    const vsDiff=val-target;
+    const vsStr=(vsDiff>=0?'목표▲':'목표▼')+Math.abs(vsDiff).toLocaleString();
+    const vsCol=vsDiff>=0?'#2e7d32':'#b71c1c';
+    const vsBg=vsDiff>=0?'rgba(46,125,50,0.09)':'rgba(183,28,28,0.09)';
+    c.font='bold 9px Malgun Gothic';
+    const vtw=c.measureText(vsStr).width, vw2=vtw+12, vh2=16;
+    const vy=by+bh+3;
+    rrect(c,bx+(bw-vw2)/2,vy,vw2,vh2,8);
+    c.fillStyle=vsBg; c.fill(); c.strokeStyle=vsCol; c.lineWidth=1; c.stroke();
+    c.fillStyle=vsCol; c.textAlign='center'; c.textBaseline='middle';
+    c.fillText(vsStr, bx+bw/2, vy+vh2/2);
+
+    c.restore();
+    return;
+  }
+
+  // 1~4월: 기존 방식
   const bx=pt.x+offX, by=pt.y+offY;
   c.save();
-  c.beginPath(); c.setLineDash([3,3]);
-  c.strokeStyle='rgba(92,107,192,0.4)'; c.lineWidth=1.2;
+  c.beginPath(); c.setLineDash([4,3]);
+  c.strokeStyle='rgba(92,107,192,0.65)'; c.lineWidth=1.6;
   c.moveTo(pt.x,pt.y); c.lineTo(bx,by); c.stroke(); c.setLineDash([]);
+  c.beginPath(); c.arc(pt.x,pt.y,3,0,Math.PI*2);
+  c.fillStyle='rgba(92,107,192,0.55)'; c.fill();
+
   c.font='bold 12px Malgun Gothic';
   const tw=c.measureText(val.toLocaleString()).width;
-  const bw=tw+16,bh=23;
-  const bbx=bx-bw/2, bby=by-bh/2;
+  const bw=tw+16,bh=23,bbx=bx-bw/2,bby=by-bh/2;
   rrect(c,bbx,bby,bw,bh,6);
   c.fillStyle='#fff'; c.fill();
   c.strokeStyle='#5c6bc0'; c.lineWidth=1.5; c.stroke();
   c.fillStyle='#1a237e'; c.textAlign='center'; c.textBaseline='middle';
   c.fillText(val.toLocaleString(),bx,by);
+
+  // 목표대비 뱃지
+  const vsDiff=val-target;
+  const vsStr=(vsDiff>=0?'목표▲':'목표▼')+Math.abs(vsDiff).toLocaleString();
+  const vsCol=vsDiff>=0?'#2e7d32':'#b71c1c';
+  const vsBg=vsDiff>=0?'rgba(46,125,50,0.09)':'rgba(183,28,28,0.09)';
+  c.font='bold 9px Malgun Gothic';
+  const vtw=c.measureText(vsStr).width, vw2=vtw+12, vh2=16;
+
   if(placeBadgesBelow){
-    let nextY=bby+bh+4;
-    if(isCurrentMonth){
-      const diff=val-prevVal;
-      const dStr=diff===0?'± 0':(diff>0?'▲':'▼')+Math.abs(diff).toLocaleString();
-      const dCol=diff>0?'#c62828':diff<0?'#1565c0':'#546e7a';
-      const dBg=diff>0?'rgba(198,40,40,0.10)':diff<0?'rgba(21,101,192,0.10)':'#f3f4fb';
-      c.font='bold 10px Malgun Gothic';
-      const dtw=c.measureText(dStr).width,dw=dtw+14,dh=19;
-      rrect(c,bx-dw/2,nextY,dw,dh,9);
-      c.fillStyle=dBg; c.fill(); c.strokeStyle=dCol; c.lineWidth=1; c.stroke();
-      c.fillStyle=dCol; c.textAlign='center'; c.textBaseline='middle';
-      c.fillText(dStr,bx,nextY+dh/2);
-      nextY+=dh+3;
-    }
-    const vsDiff=val-target;
-    const vsStr=(vsDiff>=0?'목표 ▲':'목표 ▼')+Math.abs(vsDiff).toLocaleString();
-    const vsCol=vsDiff>=0?'#2e7d32':'#b71c1c';
-    const vsBg=vsDiff>=0?'rgba(46,125,50,0.09)':'rgba(183,28,28,0.09)';
-    c.font='bold 9px Malgun Gothic';
-    const vtw=c.measureText(vsStr).width,vw2=vtw+12,vh2=16;
-    rrect(c,bx-vw2/2,nextY,vw2,vh2,8);
+    const ny=bby+bh+4;
+    rrect(c,bx-vw2/2,ny,vw2,vh2,8);
     c.fillStyle=vsBg; c.fill(); c.strokeStyle=vsCol; c.lineWidth=1; c.stroke();
     c.fillStyle=vsCol; c.textAlign='center'; c.textBaseline='middle';
-    c.fillText(vsStr,bx,nextY+vh2/2);
+    c.fillText(vsStr,bx,ny+vh2/2);
   } else {
-    let nextY=bby-3;
-    if(isCurrentMonth){
-      const diff=val-prevVal;
-      const dStr=diff===0?'± 0':(diff>0?'▲':'▼')+Math.abs(diff).toLocaleString();
-      const dCol=diff>0?'#c62828':diff<0?'#1565c0':'#546e7a';
-      const dBg=diff>0?'rgba(198,40,40,0.10)':diff<0?'rgba(21,101,192,0.10)':'#f3f4fb';
-      c.font='bold 10px Malgun Gothic';
-      const dtw=c.measureText(dStr).width,dw=dtw+14,dh=19;
-      nextY-=dh;
-      rrect(c,bx-dw/2,nextY,dw,dh,9);
-      c.fillStyle=dBg; c.fill(); c.strokeStyle=dCol; c.lineWidth=1; c.stroke();
-      c.fillStyle=dCol; c.textAlign='center'; c.textBaseline='middle';
-      c.fillText(dStr,bx,nextY+dh/2);
-      nextY-=3;
-    }
-    const vsDiff=val-target;
-    const vsStr=(vsDiff>=0?'목표 ▲':'목표 ▼')+Math.abs(vsDiff).toLocaleString();
-    const vsCol=vsDiff>=0?'#2e7d32':'#b71c1c';
-    const vsBg=vsDiff>=0?'rgba(46,125,50,0.09)':'rgba(183,28,28,0.09)';
-    c.font='bold 9px Malgun Gothic';
-    const vtw=c.measureText(vsStr).width,vw2=vtw+12,vh2=16;
-    nextY-=vh2;
-    rrect(c,bx-vw2/2,nextY,vw2,vh2,8);
+    const ny=bby-3-vh2;
+    rrect(c,bx-vw2/2,ny,vw2,vh2,8);
     c.fillStyle=vsBg; c.fill(); c.strokeStyle=vsCol; c.lineWidth=1; c.stroke();
     c.fillStyle=vsCol; c.textAlign='center'; c.textBaseline='middle';
-    c.fillText(vsStr,bx,nextY+vh2/2);
+    c.fillText(vsStr,bx,ny+vh2/2);
   }
   c.restore();
 }
 
+/* ══════ 기준선 레이블 ══════ */
 function drawRefLabels(c,chart,ca,refLines){
-  const lx=ca.left+4,lh=17,gap=4;
+  const lh=17,gap=4;
   let positions=refLines.map(({di})=>{ const fp=chart.getDatasetMeta(di).data[0]; return fp?fp.y:0; });
   for(let i=1;i<positions.length;i++){
     if(positions[i]<positions[i-1]+lh+gap) positions[i]=positions[i-1]+lh+gap;
@@ -885,6 +1063,7 @@ function drawRefLabels(c,chart,ca,refLines){
   refLines.forEach(({t,bc,bg,tc},idx)=>{
     c.save(); c.font='bold 10px Malgun Gothic';
     const tw=c.measureText(t).width,px=7,lw=tw+px*2,ly=positions[idx]-lh/2;
+    const lx=ca.left+4;
     rrect(c,lx,ly,lw,lh,5);
     c.fillStyle=bg; c.fill(); c.strokeStyle=bc; c.lineWidth=1.5; c.stroke();
     c.fillStyle=tc; c.textAlign='left'; c.textBaseline='middle';
@@ -893,72 +1072,87 @@ function drawRefLabels(c,chart,ca,refLines){
   });
 }
 
-/* ══════════════════════════════════════════════
-   TS 차트 데이터 (2026-04-30 기준)
-   오늘(핑크): 생산량=1,874 / 작지=2,090 / 외주=1,960 / 소재=540 / 열처前=6,325 / 열처後=1,902 / 입고=1,287
-   전일(흰):   생산량=1,644 / 작지=2,090 / 외주=1,960 / 소재=535 / 열처前=6,013 / 열처後=2,119 / 입고=1,398
-══════════════════════════════════════════════ */
-const tsProd26  = [1418, 1439, 1728, 1874, null, null];
+/* ══════ 페이스 목표 레이블 — 완전 오른쪽 끝 배치 ══════ */
+function drawPaceLabel(c, pt, val, ca){
+  c.save();
+  const txt='페이스 목표 '+val.toLocaleString();
+  c.font='bold 10px Malgun Gothic';
+  const tw=c.measureText(txt).width, bw=tw+14, bh=17;
+  const lbx=ca.right-bw-4, lby=pt.y-bh-6;
+
+  // 포인트 → 레이블 연결선
+  c.beginPath(); c.setLineDash([3,3]);
+  c.strokeStyle='rgba(255,152,0,0.7)'; c.lineWidth=1.3;
+  c.moveTo(pt.x,pt.y); c.lineTo(lbx+bw/2,lby+bh);
+  c.stroke(); c.setLineDash([]);
+
+  rrect(c,lbx,lby,bw,bh,5);
+  c.fillStyle='rgba(255,152,0,0.15)'; c.fill();
+  c.strokeStyle='#ffa726'; c.lineWidth=1.3; c.stroke();
+  c.fillStyle='#e65100'; c.textAlign='left'; c.textBaseline='middle';
+  c.fillText(txt,lbx+7,lby+bh/2);
+  c.restore();
+}
+
+/* ════════════════════════════════════════════
+   TS 데이터
+════════════════════════════════════════════ */
+const tsProd26  = [1418,1439,1728,1874,75,null];
 const tsTgt     = Array(6).fill(2000);
 const tsA24     = Array(6).fill(1148);
 const tsA25     = Array(6).fill(1292);
-const tsJaek    = [null, null, null, 2090, null, null];
-const tsOuter   = [null, null, null, 1960, null, null];
-const tsInner   = [null, null, null,  540, null, null];
-const tsHB      = [null, null, null, 6325, null, null];
-const tsHA      = [null, null, null, 1902, null, null];
-const tsPrevProd = 1644;
-const tsPrevJaek=2090, tsPrevOuter=1960, tsPrevInner=535, tsPrevHB=6013, tsPrevHA=2119;
-const tsPaceLine = [null, null, null, tsP.paceTarget, null, null];
+const tsJaek    = [null,null,null,null,1960,null];
+const tsOuter   = [null,null,null,null,1960,null];
+const tsInner   = [null,null,null,null,755, null];
+const tsHB      = [null,null,null,null,5830,null];
+const tsHA      = [null,null,null,null,2360,null];
+const tsPrevJaek=2090,tsPrevOuter=1960,tsPrevInner=622,tsPrevHB=5893,tsPrevHA=2237;
+const tsPaceLine= [null,null,null,null,tsP.paceTarget,null];
 
-// TS 포인트 오프셋: 2월(i=1)·4월(i=3) 오른쪽, 나머지 위쪽
-const tsOffsets = [
-  { dx:  0, dy:-50, below:false },
-  { dx: 55, dy:  0, below:false },
-  { dx:  0, dy:-50, below:false },
-  { dx: 110, dy:  0, below:false },
+// 1~4월 오프셋: below=아래쪽 뱃지
+const tsOffsets=[
+  {dx:-65,dy:0,  below:false}, // 1월 왼쪽
+  {dx: 70,dy:0,  below:false}, // 2월 오른쪽
+  {dx:  0,dy:-70,below:false}, // 3월 위
+  {dx: 70,dy:0,  below:false}, // 4월 오른쪽
 ];
 
-const tsPlugin = {
+const tsPlugin={
   id:'tsPlugin',
   afterDatasetsDraw(chart){
-    const {ctx:c, chartArea:ca} = chart;
+    const {ctx:c,chartArea:ca}=chart;
+    // 생산량 꺾은선 레이블
     chart.getDatasetMeta(0).data.forEach((pt,i)=>{
       const val=tsProd26[i]; if(val==null) return;
-      const o=tsOffsets[i];
-      drawLineLabel(c,pt,val,o.dx,o.dy,tsPrevProd,2000,i===3,o.below);
+      if(i===4){ // 5월: 오른쪽 끝 가이드선
+        drawLineLabel(c,pt,val,0,0,null,2000,true,false,true,ca);
+      } else {
+        const o=tsOffsets[i];
+        drawLineLabel(c,pt,val,o.dx,o.dy,null,2000,false,o.below,false,null);
+      }
     });
+    // 페이스 목표 레이블 — 오른쪽 끝
     chart.getDatasetMeta(9).data.forEach((pt,i)=>{
       const v=tsPaceLine[i]; if(v==null) return;
-      c.save();
-      const txt='페이스 목표 '+v.toLocaleString();
-      c.font='bold 10px Malgun Gothic';
-      const tw2=c.measureText(txt).width,bw2=tw2+14,bh2=17;
-      const lbx=pt.x-bw2/2, lby=pt.y-bh2-28;
-      rrect(c,lbx,lby,bw2,bh2,5);
-      c.fillStyle='rgba(255,152,0,0.13)'; c.fill();
-      c.strokeStyle='#ffa726'; c.lineWidth=1.2; c.stroke();
-      c.fillStyle='#e65100'; c.textAlign='left'; c.textBaseline='middle';
-      c.fillText(txt,lbx+7,lby+bh2/2);
-      c.restore();
+      drawPaceLabel(c,pt,v,ca);
     });
+    // 기준선 레이블 — 왼쪽
     drawRefLabels(c,chart,ca,[
       {di:1,t:'목표 2,000',bc:'#ffa726',bg:'#fff8e1',tc:'#e65100'},
       {di:3,t:'25년 1,292',bc:'#ec407a',bg:'#fce4ec',tc:'#880e4f'},
       {di:2,t:'24년 1,148',bc:'#ab47bc',bg:'#f3e5f5',tc:'#6a1b9a'},
     ]);
-    const tsBarSets = [
-      {di:4, data:tsJaek,  tc:'#004d54', today:2090, prev:tsPrevJaek,  forceRight:false, forceLeft:false},
-      {di:5, data:tsOuter, tc:'#7f1a00', today:1960, prev:tsPrevOuter, forceRight:false, forceLeft:false},
-      {di:6, data:tsInner, tc:'#3d0059', today:540,  prev:tsPrevInner, forceRight:false, forceLeft:true },
-      {di:7, data:tsHB,    tc:'#7f0000', today:6325, prev:tsPrevHB,    forceRight:false, forceLeft:false},
-      {di:8, data:tsHA,    tc:'#1b5e20', today:1902, prev:tsPrevHA,    forceRight:false, forceLeft:false},
-    ];
-    tsBarSets.forEach(({di,data,tc,today,prev,forceRight,forceLeft})=>{
+    // 막대 레이블
+    [
+      {di:4,data:tsJaek, tc:'#004d54',today:1960,prev:tsPrevJaek, fr:false,fl:false},
+      {di:5,data:tsOuter,tc:'#7f1a00',today:1960,prev:tsPrevOuter,fr:false,fl:false},
+      {di:6,data:tsInner,tc:'#3d0059',today:755, prev:tsPrevInner,fr:false,fl:true },
+      {di:7,data:tsHB,   tc:'#7f0000',today:5830,prev:tsPrevHB,   fr:false,fl:false},
+      {di:8,data:tsHA,   tc:'#1b5e20',today:2360,prev:tsPrevHA,   fr:false,fl:false},
+    ].forEach(({di,data,tc,today,prev,fr,fl})=>{
       chart.getDatasetMeta(di).data.forEach((bar,i)=>{
         const v=data[i]; if(v==null) return;
-        const diff=(i===3)?today-prev:null;
-        drawBarLabel(c,bar,v,tc,diff,forceRight,forceLeft);
+        drawBarLabel(c,bar,v,tc,(i===4)?today-prev:null,fr,fl);
       });
     });
   }
@@ -970,101 +1164,86 @@ let tsChart=new Chart(tsCtx,{
   data:{
     labels:months,
     datasets:[
-      {type:'line',label:'26년 생산량',data:tsProd26,borderColor:'#5c6bc0',backgroundColor:mkG(tsCtx,'rgba(92,107,192,0.25)','rgba(92,107,192,0.00)'),borderWidth:3,tension:0.4,fill:true,pointRadius:7,pointHoverRadius:11,pointBackgroundColor:'#fff',pointBorderColor:'#5c6bc0',pointBorderWidth:3,spanGaps:false,yAxisID:'y',order:1},
-      {type:'line',label:'목표',       data:tsTgt,  borderColor:'#ffa726',borderWidth:2,borderDash:[10,5],pointRadius:0,fill:false,yAxisID:'y',order:2},
-      {type:'line',label:'24년 평균',  data:tsA24,  borderColor:'#ab47bc',borderWidth:2,borderDash:[6,4], pointRadius:0,fill:false,yAxisID:'y',order:3},
-      {type:'line',label:'25년 평균',  data:tsA25,  borderColor:'#ec407a',borderWidth:2,borderDash:[4,4], pointRadius:0,fill:false,yAxisID:'y',order:4},
-      {type:'bar', label:'작지 미투입',    data:tsJaek, backgroundColor:mkG(tsCtx,'rgba(38,198,218,0.90)','rgba(38,198,218,0.50)'), borderColor:'#00acc1',borderWidth:1.5,borderRadius:{topLeft:5,topRight:5,bottomLeft:5,bottomRight:5},borderSkipped:false,stack:'stackA',yAxisID:'yR',order:10},
-      {type:'bar', label:'외주 선삭 미입고',data:tsOuter,backgroundColor:mkG(tsCtx,'rgba(255,112,67,0.88)','rgba(255,112,67,0.50)'), borderColor:'#d84315',borderWidth:1.5,borderRadius:{topLeft:0,topRight:0,bottomLeft:5,bottomRight:5},borderSkipped:false,stack:'stackB',yAxisID:'yR',order:10},
-      {type:'bar', label:'소재 미입고',     data:tsInner,backgroundColor:mkG(tsCtx,'rgba(171,71,188,0.88)','rgba(171,71,188,0.50)'), borderColor:'#6a1b9a',borderWidth:1.5,borderRadius:{topLeft:5,topRight:5,bottomLeft:0,bottomRight:0},borderSkipped:false,stack:'stackB',yAxisID:'yR',order:10},
-      {type:'bar', label:'열처리 전',       data:tsHB,   backgroundColor:mkG(tsCtx,'rgba(239,83,80,0.88)','rgba(239,83,80,0.50)'),  borderColor:'#c62828',borderWidth:1.5,borderRadius:{topLeft:0,topRight:0,bottomLeft:5,bottomRight:5},borderSkipped:false,stack:'stackC',yAxisID:'yR',order:10},
-      {type:'bar', label:'열처리 후',        data:tsHA,   backgroundColor:mkG(tsCtx,'rgba(102,187,106,0.88)','rgba(102,187,106,0.50)'),borderColor:'#2e7d32',borderWidth:1.5,borderRadius:{topLeft:5,topRight:5,bottomLeft:0,bottomRight:0},borderSkipped:false,stack:'stackC',yAxisID:'yR',order:10},
-      {type:'line',label:'페이스 목표',data:tsPaceLine,borderColor:'#ffa726',backgroundColor:'transparent',borderWidth:2,borderDash:[5,3],pointRadius:6,pointBackgroundColor:'#ffa726',pointBorderColor:'#fff',pointBorderWidth:2,spanGaps:false,yAxisID:'y',order:1.5},
+      {type:'line',label:'26년 생산량',data:tsProd26,borderColor:'#5c6bc0',backgroundColor:mkG(tsCtx,'rgba(92,107,192,0.20)','rgba(92,107,192,0.00)'),borderWidth:3,tension:0.4,fill:true,pointRadius:7,pointHoverRadius:11,pointBackgroundColor:'#fff',pointBorderColor:'#5c6bc0',pointBorderWidth:3,spanGaps:false,yAxisID:'y',order:1},
+      {type:'line',label:'목표',data:tsTgt,borderColor:'#ffa726',borderWidth:2,borderDash:[10,5],pointRadius:0,fill:false,yAxisID:'y',order:2},
+      {type:'line',label:'24년',data:tsA24,borderColor:'#ab47bc',borderWidth:2,borderDash:[6,4],pointRadius:0,fill:false,yAxisID:'y',order:3},
+      {type:'line',label:'25년',data:tsA25,borderColor:'#ec407a',borderWidth:2,borderDash:[4,4],pointRadius:0,fill:false,yAxisID:'y',order:4},
+      {type:'bar',label:'작지미투입',data:tsJaek,backgroundColor:mkG(tsCtx,'rgba(38,198,218,0.90)','rgba(38,198,218,0.50)'),borderColor:'#00acc1',borderWidth:1.5,borderRadius:{topLeft:5,topRight:5,bottomLeft:5,bottomRight:5},borderSkipped:false,stack:'stackA',yAxisID:'yR',order:10},
+      {type:'bar',label:'외주선삭',data:tsOuter,backgroundColor:mkG(tsCtx,'rgba(255,112,67,0.88)','rgba(255,112,67,0.50)'),borderColor:'#d84315',borderWidth:1.5,borderRadius:{topLeft:0,topRight:0,bottomLeft:5,bottomRight:5},borderSkipped:false,stack:'stackB',yAxisID:'yR',order:10},
+      {type:'bar',label:'소재미입고',data:tsInner,backgroundColor:mkG(tsCtx,'rgba(171,71,188,0.88)','rgba(171,71,188,0.50)'),borderColor:'#6a1b9a',borderWidth:1.5,borderRadius:{topLeft:5,topRight:5,bottomLeft:0,bottomRight:0},borderSkipped:false,stack:'stackB',yAxisID:'yR',order:10},
+      {type:'bar',label:'열처리전',data:tsHB,backgroundColor:mkG(tsCtx,'rgba(239,83,80,0.88)','rgba(239,83,80,0.50)'),borderColor:'#c62828',borderWidth:1.5,borderRadius:{topLeft:0,topRight:0,bottomLeft:5,bottomRight:5},borderSkipped:false,stack:'stackC',yAxisID:'yR',order:10},
+      {type:'bar',label:'열처리후',data:tsHA,backgroundColor:mkG(tsCtx,'rgba(102,187,106,0.88)','rgba(102,187,106,0.50)'),borderColor:'#2e7d32',borderWidth:1.5,borderRadius:{topLeft:5,topRight:5,bottomLeft:0,bottomRight:0},borderSkipped:false,stack:'stackC',yAxisID:'yR',order:10},
+      {type:'line',label:'페이스목표',data:tsPaceLine,borderColor:'#ffa726',backgroundColor:'transparent',borderWidth:2,borderDash:[5,3],pointRadius:6,pointBackgroundColor:'#ffa726',pointBorderColor:'#fff',pointBorderWidth:2,spanGaps:false,yAxisID:'y',order:1.5},
     ]
   },
   options:{
     responsive:true,
     interaction:{mode:'index',intersect:false},
     animation:{duration:900,easing:'easeInOutQuart'},
-    layout:{padding:{top:60,right:165,bottom:10,left:65}},
-    barPercentage:0.95,categoryPercentage:0.90,
-    plugins:{
-      legend:{display:false},
-      tooltip:{backgroundColor:'rgba(26,35,126,0.92)',titleColor:'#c5cae9',bodyColor:'#fff',titleFont:{family:'Malgun Gothic',size:12,weight:'bold'},bodyFont:{family:'Malgun Gothic',size:11},padding:12,borderColor:'rgba(92,107,192,0.4)',borderWidth:1,callbacks:{label:c=>c.parsed.y==null?null:' '+c.dataset.label+': '+c.parsed.y.toLocaleString()+' 대'}}
-    },
+    layout:{padding:{top:95,right:135,bottom:10,left:90}},
+    barPercentage:0.98,categoryPercentage:0.92,
+    plugins:{legend:{display:false},tooltip:{backgroundColor:'rgba(26,35,126,0.92)',titleColor:'#c5cae9',bodyColor:'#fff',titleFont:{family:'Malgun Gothic',size:12,weight:'bold'},bodyFont:{family:'Malgun Gothic',size:11},padding:12,borderColor:'rgba(92,107,192,0.4)',borderWidth:1,callbacks:{label:c=>c.parsed.y==null?null:' '+c.dataset.label+': '+c.parsed.y.toLocaleString()+' 대'}}},
     scales:{
-      y:  {position:'left', min:0,max:2500,ticks:{callback:v=>Number.isInteger(v)?v.toLocaleString():null,stepSize:500,font:{family:'Malgun Gothic',size:10},color:'#3949ab'},grid:{color:'#e8eaf6'},border:{color:'#c5cae9',width:1},title:{display:true,text:'생산량 (대)',font:{family:'Malgun Gothic',size:10,weight:'bold'},color:'#3949ab'}},
-      yR: {position:'right',stacked:true,min:0,max:14000,ticks:{callback:v=>v.toLocaleString(),font:{family:'Malgun Gothic',size:10},color:'#00838f'},grid:{drawOnChartArea:false},border:{color:'#b2dfdb',width:1},title:{display:true,text:'공정 대수 (보조축)',font:{family:'Malgun Gothic',size:10,weight:'bold'},color:'#00838f'}},
-      x:  {stacked:true,ticks:{font:{family:'Malgun Gothic',size:10},color:'#1a237e',weight:'bold'},grid:{color:'#f0f0f8'},border:{color:'#c5cae9'}}
+      y:{position:'left',min:0,max:3500,ticks:{callback:v=>v.toLocaleString(),stepSize:500,font:{family:'Malgun Gothic',size:10},color:'#3949ab'},grid:{color:'#e8eaf6'},border:{color:'#c5cae9',width:1},title:{display:true,text:'생산량 (대)',font:{family:'Malgun Gothic',size:10,weight:'bold'},color:'#3949ab'}},
+      yR:{position:'right',stacked:true,min:0,max:14000,ticks:{callback:v=>v.toLocaleString(),font:{family:'Malgun Gothic',size:10},color:'#00838f'},grid:{drawOnChartArea:false},border:{color:'#b2dfdb',width:1},title:{display:true,text:'공정 대수 (보조축)',font:{family:'Malgun Gothic',size:10,weight:'bold'},color:'#00838f'}},
+      x:{stacked:true,ticks:{font:{family:'Malgun Gothic',size:10},color:'#1a237e',weight:'bold'},grid:{color:'#f0f0f8'},border:{color:'#c5cae9'}}
     }
   },
   plugins:[tsPlugin]
 });
 
-/* ══════════════════════════════════════════════
-   TH 차트 데이터 (2026-04-30 기준)
-   오늘(핑크): 생산량=3,441 / 소재=2,010 / 플루트=910 / TIP前=3,920 / 수리=365 / TIP後=4,189 / 모따기=985 / 입고=2,354
-   전일(흰):   생산량=3,387 / 소재=2,010 / 플루트=910 / TIP前=3,960 / 수리=349  / TIP後=4,167 / 모따기=1,085 / 입고=2,372
-══════════════════════════════════════════════ */
-const thProd26  = [2827, 2648, 2963, 3441, null, null];
+/* ════════════════════════════════════════════
+   TH 데이터
+════════════════════════════════════════════ */
+const thProd26  = [2827,2648,2963,3441,198,null];
 const thTgt     = Array(6).fill(3200);
 const thA24     = Array(6).fill(2708);
 const thA25     = Array(6).fill(2501);
-const thMiss    = [null, null, null, 2010, null, null];
-const thTipB    = [null, null, null, 3920, null, null];
-const thRep     = [null, null, null,  365, null, null];
-const thTipA    = [null, null, null, 4189, null, null];
-const thPrevProd = 3387;
-const thPrevMiss=2010, thPrevTipB=3960, thPrevRep=349, thPrevTipA=4167;
-const thPaceLine = [null, null, null, thP.paceTarget, null, null];
+const thMiss    = [null,null,null,null,1760,null];
+const thTipB    = [null,null,null,null,3890,null];
+const thRep     = [null,null,null,null,267, null];
+const thTipA    = [null,null,null,null,4330,null];
+const thPrevMiss=2010,thPrevTipB=3660,thPrevRep=295,thPrevTipA=4422;
+const thPaceLine=[null,null,null,null,thP.paceTarget,null];
 
-// TH 포인트 오프셋: 1월 오른쪽 / 2월·3월·4월 위쪽
-const thOffsets = [
-  { dx:  55, dy:  0, below:false },
-  { dx:   0, dy:-50, below:false },
-  { dx:   0, dy:-50, below:false },
-  { dx: 110, dy:  0, below:false },
+const thOffsets=[
+  {dx:-65,dy:0,  below:false}, // 1월 왼쪽
+  {dx: 70,dy:0,  below:false}, // 2월 오른쪽
+  {dx:  0,dy:-70,below:false}, // 3월 위
+  {dx: 70,dy:0,  below:false}, // 4월 오른쪽
 ];
 
-const thPlugin = {
+const thPlugin={
   id:'thPlugin',
   afterDatasetsDraw(chart){
-    const {ctx:c, chartArea:ca} = chart;
+    const {ctx:c,chartArea:ca}=chart;
     chart.getDatasetMeta(0).data.forEach((pt,i)=>{
       const val=thProd26[i]; if(val==null) return;
-      const o=thOffsets[i];
-      drawLineLabel(c,pt,val,o.dx,o.dy,thPrevProd,3200,i===3,o.below);
+      if(i===4){
+        drawLineLabel(c,pt,val,0,0,null,3200,true,false,true,ca);
+      } else {
+        const o=thOffsets[i];
+        drawLineLabel(c,pt,val,o.dx,o.dy,null,3200,false,o.below,false,null);
+      }
     });
     chart.getDatasetMeta(8).data.forEach((pt,i)=>{
       const v=thPaceLine[i]; if(v==null) return;
-      c.save();
-      const txt='페이스 목표 '+v.toLocaleString();
-      c.font='bold 10px Malgun Gothic';
-      const tw2=c.measureText(txt).width,bw2=tw2+14,bh2=17;
-      const lbx=pt.x+55, lby=pt.y-bh2/2;
-      rrect(c,lbx,lby,bw2,bh2,5);
-      c.fillStyle='rgba(255,152,0,0.13)'; c.fill();
-      c.strokeStyle='#ffa726'; c.lineWidth=1.2; c.stroke();
-      c.fillStyle='#e65100'; c.textAlign='left'; c.textBaseline='middle';
-      c.fillText(txt,lbx+7,lby+bh2/2);
-      c.restore();
+      drawPaceLabel(c,pt,v,ca);
     });
     drawRefLabels(c,chart,ca,[
       {di:1,t:'목표 3,200',bc:'#ffa726',bg:'#fff8e1',tc:'#e65100'},
       {di:2,t:'24년 2,708',bc:'#ab47bc',bg:'#f3e5f5',tc:'#6a1b9a'},
       {di:3,t:'25년 2,501',bc:'#ec407a',bg:'#fce4ec',tc:'#880e4f'},
     ]);
-    const thBarSets = [
-      {di:4, data:thMiss, tc:'#004d54', today:2010, prev:thPrevMiss, forceRight:false, forceLeft:false},
-      {di:5, data:thTipB, tc:'#1a237e', today:3920, prev:thPrevTipB, forceRight:false, forceLeft:false},
-      {di:6, data:thRep,  tc:'#7f0000', today:365,  prev:thPrevRep,  forceRight:true,  forceLeft:false},
-      {di:7, data:thTipA, tc:'#1b5e20', today:4189, prev:thPrevTipA, forceRight:false, forceLeft:false},
-    ];
-    thBarSets.forEach(({di,data,tc,today,prev,forceRight,forceLeft})=>{
+    [
+      {di:4,data:thMiss,tc:'#004d54',today:1760,prev:thPrevMiss,fr:false,fl:false},
+      {di:5,data:thTipB,tc:'#1a237e',today:3890,prev:thPrevTipB,fr:false,fl:false},
+      {di:6,data:thRep, tc:'#7f0000',today:267, prev:thPrevRep, fr:true, fl:false},
+      {di:7,data:thTipA,tc:'#1b5e20',today:4330,prev:thPrevTipA,fr:false,fl:false},
+    ].forEach(({di,data,tc,today,prev,fr,fl})=>{
       chart.getDatasetMeta(di).data.forEach((bar,i)=>{
         const v=data[i]; if(v==null) return;
-        const diff=(i===3)?today-prev:null;
-        drawBarLabel(c,bar,v,tc,diff,forceRight,forceLeft);
+        drawBarLabel(c,bar,v,tc,(i===4)?today-prev:null,fr,fl);
       });
     });
   }
@@ -1076,34 +1255,263 @@ let thChart=new Chart(thCtx,{
   data:{
     labels:months,
     datasets:[
-      {type:'line',label:'26년 생산량',data:thProd26,borderColor:'#5c6bc0',backgroundColor:mkG(thCtx,'rgba(92,107,192,0.25)','rgba(92,107,192,0.00)'),borderWidth:3,tension:0.4,fill:true,pointRadius:7,pointHoverRadius:11,pointBackgroundColor:'#fff',pointBorderColor:'#5c6bc0',pointBorderWidth:3,spanGaps:false,yAxisID:'y',order:1},
-      {type:'line',label:'목표',       data:thTgt,  borderColor:'#ffa726',borderWidth:2,borderDash:[10,5],pointRadius:0,fill:false,yAxisID:'y',order:2},
-      {type:'line',label:'24년 평균',  data:thA24,  borderColor:'#ab47bc',borderWidth:2,borderDash:[6,4], pointRadius:0,fill:false,yAxisID:'y',order:3},
-      {type:'line',label:'25년 평균',  data:thA25,  borderColor:'#ec407a',borderWidth:2,borderDash:[4,4], pointRadius:0,fill:false,yAxisID:'y',order:4},
-      {type:'bar', label:'소재 미투입',data:thMiss, backgroundColor:mkG(thCtx,'rgba(38,198,218,0.90)','rgba(38,198,218,0.50)'), borderColor:'#00acc1',borderWidth:1.5,borderRadius:{topLeft:0,topRight:0,bottomLeft:6,bottomRight:6},borderSkipped:false,stack:'stackA',yAxisID:'yR',order:10},
-      {type:'bar', label:'TIP 전',     data:thTipB, backgroundColor:mkG(thCtx,'rgba(92,107,192,0.90)','rgba(92,107,192,0.50)'), borderColor:'#3949ab',borderWidth:1.5,borderRadius:{topLeft:6,topRight:6,bottomLeft:0,bottomRight:0},borderSkipped:false,stack:'stackA',yAxisID:'yR',order:10},
-      {type:'bar', label:'수리',        data:thRep,  backgroundColor:mkG(thCtx,'rgba(239,83,80,0.90)','rgba(239,83,80,0.50)'),  borderColor:'#c62828',borderWidth:1.5,borderRadius:{topLeft:0,topRight:0,bottomLeft:6,bottomRight:6},borderSkipped:false,stack:'stackB',yAxisID:'yR',order:10},
-      {type:'bar', label:'TIP 후',      data:thTipA, backgroundColor:mkG(thCtx,'rgba(102,187,106,0.90)','rgba(102,187,106,0.50)'),borderColor:'#2e7d32',borderWidth:1.5,borderRadius:{topLeft:6,topRight:6,bottomLeft:0,bottomRight:0},borderSkipped:false,stack:'stackB',yAxisID:'yR',order:10},
-      {type:'line',label:'페이스 목표',data:thPaceLine,borderColor:'#ffa726',backgroundColor:'transparent',borderWidth:2,borderDash:[5,3],pointRadius:6,pointBackgroundColor:'#ffa726',pointBorderColor:'#fff',pointBorderWidth:2,spanGaps:false,yAxisID:'y',order:1.5},
+      {type:'line',label:'26년 생산량',data:thProd26,borderColor:'#5c6bc0',backgroundColor:mkG(thCtx,'rgba(92,107,192,0.20)','rgba(92,107,192,0.00)'),borderWidth:3,tension:0.4,fill:true,pointRadius:7,pointHoverRadius:11,pointBackgroundColor:'#fff',pointBorderColor:'#5c6bc0',pointBorderWidth:3,spanGaps:false,yAxisID:'y',order:1},
+      {type:'line',label:'목표',data:thTgt,borderColor:'#ffa726',borderWidth:2,borderDash:[10,5],pointRadius:0,fill:false,yAxisID:'y',order:2},
+      {type:'line',label:'24년',data:thA24,borderColor:'#ab47bc',borderWidth:2,borderDash:[6,4],pointRadius:0,fill:false,yAxisID:'y',order:3},
+      {type:'line',label:'25년',data:thA25,borderColor:'#ec407a',borderWidth:2,borderDash:[4,4],pointRadius:0,fill:false,yAxisID:'y',order:4},
+      {type:'bar',label:'소재미투입',data:thMiss,backgroundColor:mkG(thCtx,'rgba(38,198,218,0.90)','rgba(38,198,218,0.50)'),borderColor:'#00acc1',borderWidth:1.5,borderRadius:{topLeft:0,topRight:0,bottomLeft:6,bottomRight:6},borderSkipped:false,stack:'stackA',yAxisID:'yR',order:10},
+      {type:'bar',label:'TIP전',data:thTipB,backgroundColor:mkG(thCtx,'rgba(92,107,192,0.90)','rgba(92,107,192,0.50)'),borderColor:'#3949ab',borderWidth:1.5,borderRadius:{topLeft:6,topRight:6,bottomLeft:0,bottomRight:0},borderSkipped:false,stack:'stackA',yAxisID:'yR',order:10},
+      {type:'bar',label:'수리',data:thRep,backgroundColor:mkG(thCtx,'rgba(239,83,80,0.90)','rgba(239,83,80,0.50)'),borderColor:'#c62828',borderWidth:1.5,borderRadius:{topLeft:0,topRight:0,bottomLeft:6,bottomRight:6},borderSkipped:false,stack:'stackB',yAxisID:'yR',order:10},
+      {type:'bar',label:'TIP후',data:thTipA,backgroundColor:mkG(thCtx,'rgba(102,187,106,0.90)','rgba(102,187,106,0.50)'),borderColor:'#2e7d32',borderWidth:1.5,borderRadius:{topLeft:6,topRight:6,bottomLeft:0,bottomRight:0},borderSkipped:false,stack:'stackB',yAxisID:'yR',order:10},
+      {type:'line',label:'페이스목표',data:thPaceLine,borderColor:'#ffa726',backgroundColor:'transparent',borderWidth:2,borderDash:[5,3],pointRadius:6,pointBackgroundColor:'#ffa726',pointBorderColor:'#fff',pointBorderWidth:2,spanGaps:false,yAxisID:'y',order:1.5},
     ]
   },
   options:{
     responsive:true,
     interaction:{mode:'index',intersect:false},
     animation:{duration:900,easing:'easeInOutQuart'},
-    layout:{padding:{top:60,right:165,bottom:10,left:20}},
-    barPercentage:0.95,categoryPercentage:0.90,
-    plugins:{
-      legend:{display:false},
-      tooltip:{backgroundColor:'rgba(26,35,126,0.92)',titleColor:'#c5cae9',bodyColor:'#fff',titleFont:{family:'Malgun Gothic',size:12,weight:'bold'},bodyFont:{family:'Malgun Gothic',size:11},padding:12,borderColor:'rgba(92,107,192,0.4)',borderWidth:1,callbacks:{label:c=>c.parsed.y==null?null:' '+c.dataset.label+': '+c.parsed.y.toLocaleString()+' 대'}}
-    },
+    layout:{padding:{top:95,right:135,bottom:10,left:90}},
+    barPercentage:0.98,categoryPercentage:0.92,
+    plugins:{legend:{display:false},tooltip:{backgroundColor:'rgba(26,35,126,0.92)',titleColor:'#c5cae9',bodyColor:'#fff',titleFont:{family:'Malgun Gothic',size:12,weight:'bold'},bodyFont:{family:'Malgun Gothic',size:11},padding:12,borderColor:'rgba(92,107,192,0.4)',borderWidth:1,callbacks:{label:c=>c.parsed.y==null?null:' '+c.dataset.label+': '+c.parsed.y.toLocaleString()+' 대'}}},
     scales:{
-      y:  {position:'left', min:0,max:4000,ticks:{callback:v=>v.toLocaleString(),stepSize:500,font:{family:'Malgun Gothic',size:10},color:'#3949ab'},grid:{color:'#e8eaf6'},border:{color:'#c5cae9',width:1},title:{display:true,text:'생산량 (대)',font:{family:'Malgun Gothic',size:10,weight:'bold'},color:'#3949ab'}},
-      yR: {position:'right',stacked:true,min:0,max:16000,ticks:{callback:v=>v.toLocaleString(),font:{family:'Malgun Gothic',size:10},color:'#00838f'},grid:{drawOnChartArea:false},border:{color:'#b2dfdb',width:1},title:{display:true,text:'공정 대수 (보조축)',font:{family:'Malgun Gothic',size:10,weight:'bold'},color:'#00838f'}},
-      x:  {stacked:true,ticks:{font:{family:'Malgun Gothic',size:10},color:'#1a237e',weight:'bold'},grid:{color:'#f0f0f8'},border:{color:'#c5cae9'}}
+      y:{position:'left',min:0,max:5000,ticks:{callback:v=>v.toLocaleString(),stepSize:500,font:{family:'Malgun Gothic',size:10},color:'#3949ab'},grid:{color:'#e8eaf6'},border:{color:'#c5cae9',width:1},title:{display:true,text:'생산량 (대)',font:{family:'Malgun Gothic',size:10,weight:'bold'},color:'#3949ab'}},
+      yR:{position:'right',stacked:true,min:0,max:16000,ticks:{callback:v=>v.toLocaleString(),font:{family:'Malgun Gothic',size:10},color:'#00838f'},grid:{drawOnChartArea:false},border:{color:'#b2dfdb',width:1},title:{display:true,text:'공정 대수 (보조축)',font:{family:'Malgun Gothic',size:10,weight:'bold'},color:'#00838f'}},
+      x:{stacked:true,ticks:{font:{family:'Malgun Gothic',size:10},color:'#1a237e',weight:'bold'},grid:{color:'#f0f0f8'},border:{color:'#c5cae9'}}
     }
   },
   plugins:[thPlugin]
+});
+
+/* ════════════════════════════════════════════
+   CBN 데이터 — I/S / PC 분리 꺾은선
+════════════════════════════════════════════ */
+const cbnIS     = [50636,45868,57425,58997,6718, null];
+const cbnPC     = [2465,  2201,  2772,  3116,  249,  null];
+const cbnTgtIS  = Array(6).fill(53000);
+const cbnTgtPC  = Array(6).fill(3000);
+const cbnA24IS  = Array(6).fill(48821);
+const cbnA25IS  = Array(6).fill(49234);
+const cbnBottle = [null,null,null,null,46399,null];
+const cbnInput  = [null,null,null,null,37825,null];
+const cbnPrevBottle=47419, cbnPrevInput=37847;
+const cbnPaceLine=[null,null,null,null,cbnP.paceTarget,null];
+
+// I/S 레이블 오프셋 (1~4월) — IS는 위/오른쪽, 5월은 오른쪽 끝
+const cbnISOffsets=[
+  {dx:-80,dy:0,  below:false}, // 1월 왼쪽
+  {dx:  0,dy:75, below:true }, // 2월 아래 (낮은 값)
+  {dx: 85,dy:0,  below:false}, // 3월 오른쪽
+  {dx: 85,dy:0,  below:false}, // 4월 오른쪽
+];
+// PC 레이블 오프셋 (1~4월) — IS와 반대 방향으로 완전 분리
+const cbnPCOffsets=[
+  {dx:  0,dy:-65,below:false}, // 1월 위
+  {dx:  0,dy:-65,below:false}, // 2월 위
+  {dx:-85,dy:0,  below:false}, // 3월 왼쪽
+  {dx:-85,dy:0,  below:false}, // 4월 왼쪽
+];
+
+function drawRefLabelsCBN(c,chart,ca,refLines){
+  const lh=19,gap=10;
+  let positions=refLines.map(({di})=>{ const fp=chart.getDatasetMeta(di).data[0]; return fp?fp.y:0; });
+  for(let i=1;i<positions.length;i++){
+    if(positions[i]<positions[i-1]+lh+gap) positions[i]=positions[i-1]+lh+gap;
+  }
+  refLines.forEach(({t,bc,bg,tc,bw},idx)=>{
+    c.save(); c.font='bold 10px Malgun Gothic';
+    const tw=c.measureText(t).width,px=8,lw=tw+px*2,ly=positions[idx]-lh/2;
+    const lx=ca.left+4;
+    rrect(c,lx,ly,lw,lh,5);
+    c.fillStyle=bg; c.fill(); c.strokeStyle=bc; c.lineWidth=bw||1.5; c.stroke();
+    c.fillStyle=tc; c.textAlign='left'; c.textBaseline='middle';
+    c.fillText(t,lx+px,ly+lh/2);
+    c.restore();
+  });
+}
+
+// PC 전용 레이블 드로어 (주황 테마)
+function drawPCLabel(c, pt, val, offX, offY, target, placeBadgesBelow, forceRight, ca){
+  if(forceRight && ca){
+    // 5월: 오른쪽 끝, IS 레이블 아래쪽에 세로 분리
+    const rightX=ca.right-8;
+    c.save();
+    c.beginPath(); c.setLineDash([4,3]);
+    c.strokeStyle='rgba(255,112,67,0.55)'; c.lineWidth=1.4;
+    c.moveTo(pt.x,pt.y); c.lineTo(rightX-90,pt.y);
+    c.stroke(); c.setLineDash([]);
+    c.beginPath(); c.arc(pt.x,pt.y,4,0,Math.PI*2);
+    c.fillStyle='#ff7043'; c.fill();
+    c.beginPath(); c.arc(pt.x,pt.y,4,0,Math.PI*2);
+    c.strokeStyle='#fff'; c.lineWidth=2; c.stroke();
+    c.font='bold 11px Malgun Gothic';
+    const tw=c.measureText(val.toLocaleString()).width;
+    const bw=tw+18,bh=22;
+    // IS 레이블(위)과 충분히 분리 — 아래쪽에 배치
+    const bx=rightX-bw, by=pt.y+30;
+    rrect(c,bx,by,bw,bh,6);
+    c.fillStyle='#fff3e0'; c.fill(); c.strokeStyle='#ff7043'; c.lineWidth=1.5; c.stroke();
+    c.fillStyle='#bf360c'; c.textAlign='center'; c.textBaseline='middle';
+    c.fillText(val.toLocaleString(),bx+bw/2,by+bh/2);
+    // 목표대비 뱃지
+    const vd=val-target, vs=(vd>=0?'목표▲':'목표▼')+Math.abs(vd).toLocaleString();
+    const vc=vd>=0?'#2e7d32':'#b71c1c', vb=vd>=0?'rgba(46,125,50,0.09)':'rgba(183,28,28,0.09)';
+    c.font='bold 9px Malgun Gothic';
+    const vw=c.measureText(vs).width+12, vh=15;
+    rrect(c,bx+(bw-vw)/2,by+bh+3,vw,vh,7);
+    c.fillStyle=vb; c.fill(); c.strokeStyle=vc; c.lineWidth=1; c.stroke();
+    c.fillStyle=vc; c.textAlign='center'; c.textBaseline='middle';
+    c.fillText(vs,bx+bw/2,by+bh+3+vh/2);
+    c.restore();
+    return;
+  }
+  // 1~4월: 오프셋 방식
+  const bx=pt.x+offX, by=pt.y+offY;
+  c.save();
+  c.beginPath(); c.setLineDash([4,3]);
+  c.strokeStyle='rgba(255,112,67,0.65)'; c.lineWidth=1.5;
+  c.moveTo(pt.x,pt.y); c.lineTo(bx,by); c.stroke(); c.setLineDash([]);
+  c.beginPath(); c.arc(pt.x,pt.y,3,0,Math.PI*2);
+  c.fillStyle='rgba(255,112,67,0.55)'; c.fill();
+  c.font='bold 11px Malgun Gothic';
+  const tw=c.measureText(val.toLocaleString()).width;
+  const bw=tw+16,bh=21,bbx=bx-bw/2,bby=by-bh/2;
+  rrect(c,bbx,bby,bw,bh,6);
+  c.fillStyle='#fff3e0'; c.fill(); c.strokeStyle='#ff7043'; c.lineWidth=1.5; c.stroke();
+  c.fillStyle='#bf360c'; c.textAlign='center'; c.textBaseline='middle';
+  c.fillText(val.toLocaleString(),bx,by);
+  const vd=val-target, vs=(vd>=0?'목표▲':'목표▼')+Math.abs(vd).toLocaleString();
+  const vc=vd>=0?'#2e7d32':'#b71c1c', vb=vd>=0?'rgba(46,125,50,0.09)':'rgba(183,28,28,0.09)';
+  c.font='bold 9px Malgun Gothic';
+  const vw=c.measureText(vs).width+12, vh=15;
+  const ny=placeBadgesBelow?bby+bh+4:bby-3-vh;
+  rrect(c,bx-vw/2,ny,vw,vh,7);
+  c.fillStyle=vb; c.fill(); c.strokeStyle=vc; c.lineWidth=1; c.stroke();
+  c.fillStyle=vc; c.textAlign='center'; c.textBaseline='middle';
+  c.fillText(vs,bx,ny+vh/2);
+  c.restore();
+}
+
+const cbnPlugin={
+  id:'cbnPlugin',
+  afterDatasetsDraw(chart){
+    const {ctx:c,chartArea:ca}=chart;
+
+    // di=0 I/S 꺾은선 레이블
+    chart.getDatasetMeta(0).data.forEach((pt,i)=>{
+      const val=cbnIS[i]; if(val==null) return;
+      if(i===4){
+        drawLineLabel(c,pt,val,0,0,null,53000,true,false,true,ca);
+      } else {
+        const o=cbnISOffsets[i];
+        drawLineLabel(c,pt,val,o.dx,o.dy,null,53000,false,o.below,false,null);
+      }
+    });
+
+    // di=4 PC 꺾은선 레이블
+    chart.getDatasetMeta(4).data.forEach((pt,i)=>{
+      const val=cbnPC[i]; if(val==null) return;
+      if(i===4){
+        drawPCLabel(c,pt,val,0,0,3000,false,true,ca);
+      } else {
+        const o=cbnPCOffsets[i];
+        drawPCLabel(c,pt,val,o.dx,o.dy,3000,o.below,false,null);
+      }
+    });
+
+    // di=5 병목 막대
+    chart.getDatasetMeta(5).data.forEach((bar,i)=>{
+      const v=cbnBottle[i]; if(v==null) return;
+      drawBarLabel(c,bar,v,'#7f0000',(i===4)?v-cbnPrevBottle:null,false,false);
+    });
+    // di=6 입고기준 막대
+    chart.getDatasetMeta(6).data.forEach((bar,i)=>{
+      const v=cbnInput[i]; if(v==null) return;
+      drawBarLabel(c,bar,v,'#004d54',(i===4)?v-cbnPrevInput:null,false,false);
+    });
+
+    // di=7 페이스 목표 — 우하단 고정
+    chart.getDatasetMeta(7).data.forEach((pt,i)=>{
+      const v=cbnPaceLine[i]; if(v==null) return;
+      c.save();
+      const txt='페이스 목표 '+v.toLocaleString();
+      c.font='bold 10px Malgun Gothic';
+      const tw=c.measureText(txt).width, bw=tw+14, bh=17;
+      const lbx=ca.right-bw-8, lby=ca.bottom-bh-8;
+      c.beginPath(); c.setLineDash([3,3]);
+      c.strokeStyle='rgba(255,152,0,0.6)'; c.lineWidth=1.2;
+      c.moveTo(pt.x,pt.y); c.lineTo(lbx+bw/2,lby+bh); c.stroke(); c.setLineDash([]);
+      rrect(c,lbx,lby,bw,bh,5);
+      c.fillStyle='rgba(255,152,0,0.15)'; c.fill();
+      c.strokeStyle='#ffa726'; c.lineWidth=1.3; c.stroke();
+      c.fillStyle='#e65100'; c.textAlign='left'; c.textBaseline='middle';
+      c.fillText(txt,lbx+7,lby+bh/2);
+      c.restore();
+    });
+
+    drawRefLabelsCBN(c,chart,ca,[
+      {di:1,t:'I/S 목표 53,000',bc:'#ffa726',bg:'#fff8e1',tc:'#e65100',bw:2},
+      {di:3,t:'25년 I/S 49,234',bc:'#ec407a',bg:'#fce4ec',tc:'#880e4f',bw:1.5},
+      {di:2,t:'24년 I/S 48,821',bc:'#ab47bc',bg:'#f3e5f5',tc:'#6a1b9a',bw:2.5},
+    ]);
+
+    // PC 목표선 레이블 (yR 기준, 왼쪽)
+    {
+      const pcTgtY=chart.scales.yR.getPixelForValue(3000);
+      const t='PC 목표 3,000';
+      c.save(); c.font='bold 10px Malgun Gothic';
+      const tw=c.measureText(t).width, px2=8, lw=tw+px2*2, lh2=17;
+      // IS 기준선 레이블들과 겹치지 않게 오른쪽 끝에 배치
+      const lx=ca.right-lw-8, ly=pcTgtY-lh2/2;
+      rrect(c,lx,ly,lw,lh2,5);
+      c.fillStyle='#fff3e0'; c.fill(); c.strokeStyle='#ff7043'; c.lineWidth=1.5; c.stroke();
+      c.fillStyle='#bf360c'; c.textAlign='left'; c.textBaseline='middle';
+      c.fillText(t,lx+px2,ly+lh2/2);
+      c.restore();
+    }
+  }
+};
+
+const cbnCtx=document.getElementById('cbn-chart1').getContext('2d');
+let cbnChart=new Chart(cbnCtx,{
+  type:'bar',
+  data:{
+    labels:months,
+    datasets:[
+      // di=0 I/S 꺾은선 (주축 y)
+      {type:'line',label:'I/S 생산량',data:cbnIS,borderColor:'#5c6bc0',backgroundColor:mkG(cbnCtx,'rgba(92,107,192,0.15)','rgba(92,107,192,0.00)'),borderWidth:3,tension:0.4,fill:true,pointRadius:7,pointHoverRadius:11,pointBackgroundColor:'#fff',pointBorderColor:'#5c6bc0',pointBorderWidth:3,spanGaps:false,yAxisID:'y',order:1},
+      // di=1 I/S 목표선
+      {type:'line',label:'I/S목표',data:cbnTgtIS,borderColor:'#ffa726',borderWidth:2,borderDash:[10,5],pointRadius:0,fill:false,yAxisID:'y',order:2},
+      // di=2 24년 기준선
+      {type:'line',label:'24년IS',data:cbnA24IS,borderColor:'#ab47bc',borderWidth:2.5,borderDash:[12,4],pointRadius:0,fill:false,yAxisID:'y',order:3},
+      // di=3 25년 기준선
+      {type:'line',label:'25년IS',data:cbnA25IS,borderColor:'#ec407a',borderWidth:1.5,borderDash:[3,3],pointRadius:0,fill:false,yAxisID:'y',order:4},
+      // di=4 PC 꺾은선 (보조축 yR)
+      {type:'line',label:'PC 생산량',data:cbnPC,borderColor:'#ff7043',backgroundColor:'transparent',borderWidth:3,tension:0.4,pointRadius:7,pointHoverRadius:11,pointBackgroundColor:'#fff3e0',pointBorderColor:'#ff7043',pointBorderWidth:3,spanGaps:false,yAxisID:'yR',order:1},
+      // di=5 병목 막대
+      {type:'bar',label:'병목공정',data:cbnBottle,backgroundColor:mkG(cbnCtx,'rgba(239,83,80,0.85)','rgba(239,83,80,0.45)'),borderColor:'#c62828',borderWidth:1.5,borderRadius:6,borderSkipped:false,stack:'stackA',yAxisID:'yR2',order:10},
+      // di=6 입고기준 막대
+      {type:'bar',label:'입고기준',data:cbnInput,backgroundColor:mkG(cbnCtx,'rgba(38,198,218,0.85)','rgba(38,198,218,0.45)'),borderColor:'#00acc1',borderWidth:1.5,borderRadius:6,borderSkipped:false,stack:'stackB',yAxisID:'yR2',order:10},
+      // di=7 페이스 목표
+      {type:'line',label:'페이스목표',data:cbnPaceLine,borderColor:'#ffa726',backgroundColor:'transparent',borderWidth:2,borderDash:[5,3],pointRadius:6,pointBackgroundColor:'#ffa726',pointBorderColor:'#fff',pointBorderWidth:2,spanGaps:false,yAxisID:'y',order:1.5},
+      // di=8 PC 목표선
+      {type:'line',label:'PC목표',data:cbnTgtPC,borderColor:'#ff7043',borderWidth:1.8,borderDash:[8,4],pointRadius:0,fill:false,yAxisID:'yR',order:3},
+    ]
+  },
+  options:{
+    responsive:true,
+    interaction:{mode:'index',intersect:false},
+    animation:{duration:900,easing:'easeInOutQuart'},
+    layout:{padding:{top:95,right:145,bottom:35,left:90}},
+    barPercentage:0.85,categoryPercentage:0.80,
+    plugins:{legend:{display:false},tooltip:{backgroundColor:'rgba(26,35,126,0.92)',titleColor:'#c5cae9',bodyColor:'#fff',titleFont:{family:'Malgun Gothic',size:12,weight:'bold'},bodyFont:{family:'Malgun Gothic',size:11},padding:12,borderColor:'rgba(92,107,192,0.4)',borderWidth:1,callbacks:{label:c=>c.parsed.y==null?null:' '+c.dataset.label+': '+c.parsed.y.toLocaleString()+' 대'}}},
+    scales:{
+      y:  {position:'left', min:0,max:80000,ticks:{callback:v=>v.toLocaleString(),stepSize:10000,font:{family:'Malgun Gothic',size:10},color:'#3949ab'},grid:{color:'#e8eaf6'},border:{color:'#c5cae9',width:1},title:{display:true,text:'I/S 생산량 (대)',font:{family:'Malgun Gothic',size:10,weight:'bold'},color:'#3949ab'}},
+      yR: {position:'right',min:0,max:4000, ticks:{callback:v=>v.toLocaleString(),font:{family:'Malgun Gothic',size:10},color:'#ff7043'},grid:{drawOnChartArea:false},border:{color:'#ffccbc',width:1},title:{display:true,text:'PC 생산량 (대)',font:{family:'Malgun Gothic',size:10,weight:'bold'},color:'#ff7043'}},
+      yR2:{position:'right',min:0,max:70000,display:false,grid:{drawOnChartArea:false}},
+      x:  {ticks:{font:{family:'Malgun Gothic',size:10},color:'#1a237e',weight:'bold'},grid:{color:'#f0f0f8'},border:{color:'#c5cae9'}}
+    }
+  },
+  plugins:[cbnPlugin]
 });
 </script>
 </body>
