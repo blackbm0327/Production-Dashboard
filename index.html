@@ -2149,9 +2149,8 @@ const thPlugin={
       {di:4,data:thMiss,    tc:'#004d54',prev:thPrevMiss,    fr:false,fl:false},
       {di:5,data:thFlute,   tc:'#7f1a00',prev:thPrevFlute,   fr:false,fl:true },
       {di:6,data:thTipB,    tc:'#1a237e',prev:thPrevTipB,    fr:false,fl:false},
-      {di:7,data:thRep,     tc:'#7f0000',prev:thPrevRep,     fr:true, fl:false},
+      {di:7,data:thRep,     tc:'#7f0000',prev:thPrevRep,     fr:false,fl:true },
       {di:8,data:thTipA,    tc:'#1b5e20',prev:thPrevTipA,    fr:true, fl:false},
-      {di:9,data:thIngo,    tc:'#f57f17',prev:thPrevIngo,    fr:false,fl:false},
       {di:10,data:thHeatDip, tc:'#6a0dad',prev:thPrevHeatDip, fr:false,fl:true },
     ].forEach(({di,data,tc,prev,fr,fl})=>{
       chart.getDatasetMeta(di).data.forEach((bar,i)=>{
@@ -2177,7 +2176,7 @@ window.thChart=null; let thChart=new Chart(thCtx,{
       {type:'bar',label:'TIP전',    data:thTipB, backgroundColor:mkG(thCtx,'rgba(92,107,192,0.90)','rgba(92,107,192,0.50)'),borderColor:'#3949ab',borderWidth:1.5,borderRadius:{topLeft:0,topRight:0,bottomLeft:6,bottomRight:6},borderSkipped:false,stack:'stackB',yAxisID:'yR',order:10},
       {type:'bar',label:'수리',     data:thRep,  backgroundColor:mkG(thCtx,'rgba(239,83,80,0.90)','rgba(239,83,80,0.50)'),borderColor:'#c62828',borderWidth:1.5,borderRadius:{topLeft:0,topRight:0,bottomLeft:0,bottomRight:0},borderSkipped:false,stack:'stackB',yAxisID:'yR',order:10},
       {type:'bar',label:'TIP후',    data:thTipA, backgroundColor:mkG(thCtx,'rgba(102,187,106,0.90)','rgba(102,187,106,0.50)'),borderColor:'#2e7d32',borderWidth:1.5,borderRadius:{topLeft:6,topRight:6,bottomLeft:0,bottomRight:0},borderSkipped:false,stack:'stackB',yAxisID:'yR',order:10},
-      {type:'bar',label:'2주내입고',data:thIngo,backgroundColor:mkG(thCtx,'rgba(255,167,38,0.85)','rgba(255,167,38,0.45)'),borderColor:'#f57f17',borderWidth:1.5,borderRadius:{topLeft:6,topRight:6,bottomLeft:0,bottomRight:0},borderSkipped:false,stack:'stackA',yAxisID:'yR',order:10},
+
       {type:'bar',label:'열처리도금',data:thHeatDip,backgroundColor:'rgba(156,39,176,0.85)',borderColor:'#6a0dad',borderWidth:1.5,borderRadius:{topLeft:6,topRight:6,bottomLeft:0,bottomRight:0},borderSkipped:false,stack:'stackA',yAxisID:'yR',order:10},
       {type:'line',label:'페이스목표',data:thPaceLine,borderColor:'#ffa726',backgroundColor:'transparent',borderWidth:2,borderDash:[5,3],pointRadius:6,pointBackgroundColor:'#ffa726',pointBorderColor:'#fff',pointBorderWidth:2,spanGaps:false,yAxisID:'y',order:1.5},
     ]
