@@ -566,7 +566,7 @@ tbody tr:hover td { background:#eef0fb; }
     <div class="kpi-card-wip">
       <div class="wip-icon">🔄</div>
       <div class="wip-label">총 재공수량</div>
-      <div class="wip-value">8,414</div>
+      <div class="wip-value">7,734</div>
       <div><span class="wip-unit">소재+TIP전+수리+TIP후</span></div>
       <div class="wip-formula">소재2,030 + TIP前2,790 + 수리316 + TIP後3,116</div>
       <div style="margin-top:4px;font-size:9px;color:#b71c1c;font-weight:600;">▼ 104 전일대비 (전일 8,745)</div>
@@ -834,8 +834,8 @@ tbody tr:hover td { background:#eef0fb; }
       <div class="legend-item"><div style="width:15px;height:0;border-top:2px dotted #ffa726;"></div>페이스 목표</div>
       <div class="legend-item"><div style="width:15px;height:0;border-top:2.5px dashed #ab47bc;"></div>24년 I/S(48,821)</div>
       <div class="legend-item"><div style="width:15px;height:0;border-top:1.5px dotted #ec407a;"></div>25년 I/S(49,234)</div>
-      <div class="legend-item"><div style="width:10px;height:10px;border-radius:3px;background:rgba(239,83,80,0.85);"></div>병목공정 (5월)</div>
-      <div class="legend-item"><div style="width:10px;height:10px;border-radius:3px;background:rgba(38,198,218,0.85);"></div>입고기준공정 (5월)</div>
+      <div class="legend-item"><div style="width:10px;height:10px;border-radius:3px;background:rgba(239,83,80,0.85);"></div>병목공정</div>
+      <div class="legend-item"><div style="width:10px;height:10px;border-radius:3px;background:rgba(38,198,218,0.85);"></div>입고기준공정</div>
     </div>
     <canvas id="cbn-chart1" height="220"></canvas>
   </div>
@@ -1161,9 +1161,12 @@ function rrect(ctx,x,y,w,h,r){
 }
 
 /* ══════ 막대 레이블 ══════ */
-function drawBarLabel(ctx,bar,value,textColor,diff,forceRight,forceLeft){
+function drawBarLabel(ctx,bar,value,textColor,diff,forceRight,forceLeft,chartKey,labelKey){
   const barH=Math.abs(bar.base-bar.y);
   if(barH<1) return;
+  // 오프셋 적용
+  const _off=(chartKey&&labelKey&&window.getLabelOffset)?window.getLabelOffset(chartKey,labelKey):{dx:0,dy:0};
+  const offDx=_off.dx||0, offDy=_off.dy||0;
   const txt=value.toLocaleString();
   const hasDiff=(diff!==null&&diff!==undefined);
   const diffStr=hasDiff?(diff===0?'± 0':(diff>0?'▲':'▼')+Math.abs(diff).toLocaleString()):null;
@@ -1207,8 +1210,9 @@ function drawBarLabel(ctx,bar,value,textColor,diff,forceRight,forceLeft){
     const drawExt=(anchorX,dir)=>{
       const GAP=isTiny?6:12;
       const lineEndX=dir>0?anchorX+GAP:anchorX-GAP;
-      const boxX=dir>0?lineEndX+3:lineEndX-vw-3;
-      const lineTargetY=boxStartY+vh/2;
+      const boxX=(dir>0?lineEndX+3:lineEndX-vw-3)+offDx;
+      const boxY=boxStartY+offDy;
+      const lineTargetY=boxY+vh/2;
       ctx.beginPath();
       ctx.strokeStyle=textColor; ctx.lineWidth=1.2; ctx.setLineDash([]);
       if(isTiny){
@@ -1218,14 +1222,15 @@ function drawBarLabel(ctx,bar,value,textColor,diff,forceRight,forceLeft){
       }
       ctx.stroke();
       ctx.font='bold 10px Malgun Gothic';
-      rrect(ctx,boxX,boxStartY,vw,vh,5);
+      rrect(ctx,boxX,boxY,vw,vh,5);
       ctx.fillStyle='#fff'; ctx.fill();
       ctx.strokeStyle=textColor; ctx.lineWidth=1.2; ctx.stroke();
       ctx.fillStyle=textColor; ctx.textAlign='center'; ctx.textBaseline='middle';
-      ctx.fillText(txt,boxX+vw/2,boxStartY+vh/2);
+      ctx.fillText(txt,boxX+vw/2,boxY+vh/2);
+      if(chartKey&&labelKey&&window.registerLabelRect) window.registerLabelRect(chartKey,labelKey,boxX,boxY,vw,totalH);
       if(hasDiff){
         ctx.font='bold 9px Malgun Gothic';
-        const dy2=boxStartY+vh+3;
+        const dy2=boxY+vh+3;
         const bx2=boxX+(vw-dw)/2;
         rrect(ctx,bx2,dy2,dw,dh,7);
         ctx.fillStyle='rgba(255,255,255,0.90)'; ctx.fill();
@@ -2103,17 +2108,17 @@ const thPlugin={
       {di:3,t:'25년 2,501',bc:'#ec407a',bg:'#fce4ec',tc:'#880e4f'},
     ]);
     [
-      {di:4,data:thMiss,    tc:'#004d54',prev:thPrevMiss,    fr:false,fl:false},
-      {di:5,data:thFlute,   tc:'#7f1a00',prev:thPrevFlute,   fr:false,fl:true },
-      {di:6,data:thTipB,    tc:'#1a237e',prev:thPrevTipB,    fr:false,fl:false},
-      {di:7,data:thRep,     tc:'#7f0000',prev:thPrevRep,     fr:true, fl:false},
-      {di:8,data:thTipA,    tc:'#1b5e20',prev:thPrevTipA,    fr:true, fl:false},
-      {di:9,data:thIngo,    tc:'#f57f17',prev:thPrevIngo,    fr:false,fl:false},
-      {di:10,data:thHeatDip, tc:'#6a0dad',prev:thPrevHeatDip, fr:false,fl:true },
-    ].forEach(({di,data,tc,prev,fr,fl})=>{
+      {di:4,data:thMiss,    tc:'#004d54',prev:thPrevMiss,    fr:false,fl:true,  lk:'th_miss'},
+      {di:5,data:thFlute,   tc:'#7f1a00',prev:thPrevFlute,   fr:true, fl:false, lk:'th_flute'},
+      {di:6,data:thTipB,    tc:'#1a237e',prev:thPrevTipB,    fr:false,fl:true,  lk:'th_tipb'},
+      {di:7,data:thRep,     tc:'#7f0000',prev:thPrevRep,     fr:false,fl:true,  lk:'th_rep'},
+      {di:8,data:thTipA,    tc:'#1b5e20',prev:thPrevTipA,    fr:false,fl:true,  lk:'th_tipa'},
+      {di:9,data:thIngo,    tc:'#f57f17',prev:thPrevIngo,    fr:true, fl:false, lk:'th_ingo'},
+      {di:10,data:thHeatDip, tc:'#6a0dad',prev:thPrevHeatDip, fr:false,fl:true, lk:'th_heatdip'},
+    ].forEach(({di,data,tc,prev,fr,fl,lk})=>{
       chart.getDatasetMeta(di).data.forEach((bar,i)=>{
         const v=data[i]; if(v==null) return;
-        drawBarLabel(c,bar,v,tc,(i===5)?v-prev:null,fr,fl);
+        drawBarLabel(c,bar,v,tc,(i===5)?v-prev:null,fr,fl,'th',lk+'_'+i);
       });
     });
   }
@@ -2491,9 +2496,8 @@ function showToast(msg) {
     if(!labels) return null;
 
     for(const lbl of labels) {
-      const ox = (offsets[lbl.key]||{}).dx||0;
-      const oy = (offsets[lbl.key]||{}).dy||0;
-      const x1=lbl.x+ox, y1=lbl.y+oy, x2=x1+lbl.w, y2=y1+lbl.h;
+      // registerLabelRect에서 이미 오프셋 반영된 좌표로 등록됨 — 이중 적용 금지
+      const x1=lbl.x, y1=lbl.y, x2=x1+lbl.w, y2=y1+lbl.h;
       if(mx>=x1&&mx<=x2&&my>=y1&&my<=y2) return lbl;
     }
     return null;
@@ -2525,13 +2529,16 @@ function showToast(msg) {
         const dy = origDy + (my-startY);
         if(!window.labelOffsets[key]) window.labelOffsets[key]={};
         window.labelOffsets[key][lbl.key] = {dx, dy};
-        // 차트 재렌더링
         const chart = window[key+'Chart'];
         if(chart) chart.update('none');
         e.preventDefault();
       },
       up: () => {
-        if(dragState[id]){ delete dragState[id]; canvas.style.cursor='grab'; }
+        if(dragState[id]){
+          delete dragState[id];
+          canvas.style.cursor='grab';
+          localStorage.setItem('labelOffsets', JSON.stringify(window.labelOffsets));
+        }
       }
     };
     canvas.addEventListener('mousedown', canvas._dragHandler.down);
